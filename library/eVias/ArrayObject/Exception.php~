@@ -1,0 +1,18 @@
+<?php
+/**
+ * Exception.php for Virgin in library/Virgin/ArrayObject
+ *
+ * PHP Version 5.2
+ *
+ * @category Virgin
+ * @package  Virgin_ArrayObject
+ * @author   Nicolas Lenepveu <nlenepveu@elma.fr>
+ * @license  Copyright (c) 2009, Elma Ingenierie Informatique
+ * @link     http://elma.fr
+ */
+
+class Virgin_ArrayObject_Exception extends Virgin_Exception
+{
+
+}
+
