@@ -1,0 +1,178 @@
+/*
+ -- DOM TREE specific declarations
+*/
+
+body {
+	position: relative;
+}
+
+#page {
+	border: 2px solid #444444;
+	width: 1000px;
+	padding: 0px;
+	margin: auto;
+}
+
+#page #header {
+	background-color: #363;
+	color: #fff;
+	height: 24px;
+}
+
+#page #header span {
+	text-align: center;
+	font: 10pt Verdana;
+}
+
+#page #menu {
+	width: 250px;
+	border: 0px;
+	border-right: 1px solid #444;
+	float:left;
+}
+
+#page #content
+{
+	color: #91BE3F;
+	border: 0px;
+	width: 745px;
+    float:left;
+}
+
+#page #content h1 {
+	color: #91BE3F;
+    text-align: center;
+}
+
+#page #content h2 {
+    margin-left: 10%;
+    color: #fff;
+    font-family: Verdana;
+    font-size: 12pt;
+    font-weight: bold;
+    background-color: #363;
+    text-align: center;
+    width: 80%;
+    border: 1px dashed #ff6;
+}
+
+#page #content p {
+    color: #444;
+	font: 10pt Verdana;
+}
+
+#page #content h3 {
+    color: #000;
+    font: 11pt Verdana;
+    text-decoration: underline;
+}
+
+#page #content p label {
+    font: 10pt Verdana;
+    text-decoration: underline;
+    width: 100px;
+    vertical-align: middle;
+}
+
+#page #content p input.title {
+    font: 10pt Verdana;
+    font-weight: bold;
+    color: #363;
+    width: 45%;
+}
+
+#page #content p textarea {
+    font: 10pt Verdana;
+    font-weight: normal;
+    color: #000;
+    height: 100px;
+    width: 90%;
+}
+
+#page #footer {
+	background-color: #363;
+	color: #fff;
+	height: 24px;
+}
+
+#page #footer span {
+	text-align: center;
+	font: 10pt Verdana;
+}
+
+#page #footer span a:link, a:visited {
+	color: #fff;
+	text-decoration: underline;
+}
+
+#page #footer span a:hover, a:active {
+	text-decoration: none;
+}
+
+/*
+ -- Out-scope declarations
+ -- tag specific, not dom tree related
+*/
+
+div.clear {
+    clear: both;
+}
+
+div.article {
+    margin-left: 20px;
+    margin-bottom: 5px;
+    border: 1px solid #dcdcdc;
+}
+
+div.article p span {
+    font-weight: bold;
+}
+
+div.article p.user-actions {
+    margin: 0px;
+    padding: 2px;
+}
+
+div.article p.user-actions p.comment-add input.comment-add {
+    width: 75px;
+    border: 1px dashed #000;
+    font-family: Verdana;
+    font-size: 10pt;
+    font-weight: bold;
+}
+
+div.article p.user-actions p.comment-add textarea.comment-add {
+    width: 100px;
+    
+}
+
+div.article p.small-contenu {
+    font-weight: normal;
+    text-decoration: underline;
+    font: 10pt Verdana;
+}
+
+div.article p.small-contenu:hover {
+    cursor: pointer;
+    text-decoration: none;
+}
+
+div.article p img.hide-article {
+    border: 0px;
+}
+
+div.article p img.hide-article:hover {
+    cursor: pointer;
+}
+
+a:link,
+a:visited
+{
+    color: #363;
+	text-decoration: underline;
+}
+
+a:hover,
+a:active {
+	text-decoration:none;
+}

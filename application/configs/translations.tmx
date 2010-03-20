@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<!DOCTYPE tmx SYSTEM "tmx14.dtd">
+<tmx version="1.4">
+	<header creationtoolversion="1.0.0" 
+			datatype="winres"
+			segtype="sentence"
+			adminlang="fr" srclang="fr"
+			o-tmf="abc"
+			creationtool="XYZTool">
+	</header>
+	<body>
+		<tu tuid="txt_mod_welcome">
+			<tuv xml:lang="fr"><seg>Bienvenu sur la page d'accueil du module %s.</seg></tuv>
+			<tuv xml:lang="en"><seg>Welcome on the home page of the %s Module.</seg></tuv>
+			<tuv xml:lang="de"><seg>Wilkommen auf der Homepage vom %s Module.</seg></tuv>
+		</tu>
+		<tu tuid="txt_mod_name_home">
+			<tuv xml:lang="fr"><seg>Accueil</seg></tuv>
+			<tuv xml:lang="en"><seg>Home</seg></tuv>
+			<tuv xml:lang="de"><seg>Empfang</seg></tuv>
+		</tu>
+		<tu tuid="txt_mod_name_boutique">
+			<tuv xml:lang="fr"><seg>Boutique</seg></tuv>
+			<tuv xml:lang="en"><seg>Shop</seg></tuv>
+			<tuv xml:lang="de"><seg>Boutique</seg></tuv>
+		</tu>
+		<tu tuid="txt_mod_name_member">
+			<tuv xml:lang="fr"><seg>Espace Membre</seg></tuv>
+			<tuv xml:lang="en"><seg>Member Panel</seg></tuv>
+			<tuv xml:lang="de"><seg>Mitglieder Panel</seg></tuv>
+		</tu>
+	</body>
+</tmx>
