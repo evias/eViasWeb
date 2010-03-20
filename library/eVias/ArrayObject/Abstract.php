@@ -3,7 +3,7 @@
  * @package eVias_Core
  * @author   g.saive
  * @brief : implements an abstract layer for
- *			objects represented as arrays
+ *			arrays represented as objects
  */
 
 abstract class eVias_ArrayObject_Abstract 
@@ -63,7 +63,7 @@ abstract class eVias_ArrayObject_Abstract
     /**
      * Reset all data
      *
-     * @return E_ArrayObject_Abstract
+     * @return eVias_ArrayObject_Abstract
      */
     public function reset()
     {
@@ -77,14 +77,14 @@ abstract class eVias_ArrayObject_Abstract
      *
      * @param mixed $values IteratorAggregate|Traversable|array
      *
-     * @return E_ArrayObject_Abstract
+     * @return eVias_ArrayObject_Abstract
      *
-     * @throws E_Exception
+     * @throws eVias_Exception
      */
     public function bind($values)
     {
         if ( ! is_array($values) && ! $values instanceof Traversable ) {
-            throw new E_ArrayObject_Exception('Invalid type given : ' . var_export($values, true));
+            throw new eVias_ArrayObject_Exception('Invalid type given : ' . var_export($values, true));
         }
 
         foreach ( $values as $key => $val ) {

@@ -185,17 +185,17 @@ abstract class eVias_ArrayObject_Db
      *    if array, then format:
      * ['pk_name1' => 'pk_val1', 'pk_name2' => 'pk_val2']
      *
-     * @return E_ArrayObject_Abstract
+     * @return eVias_ArrayObject_Abstract
      */
     protected function _load($id)
     {
         if ( is_array($this->_pk) ) {
             if ( ! is_array($id) ) {
-                throw new E_ArrayObject_Exception( 'There is more than one primary key for ' . $this->_tableName . ', the data you wan\'t the object to be loaded with should be an array.');
+                throw new eVias_ArrayObject_Exception( 'There is more than one primary key for ' . $this->_tableName . ', the data you wan\'t the object to be loaded with should be an array.');
             }
 
             if ( count($this->_pk) != count($id) ) {
-                throw new E_ArrayObject_Exception( 'The count of primary keys should be equal to the count of data rows.' );
+                throw new eVias_ArrayObject_Exception( 'The count of primary keys should be equal to the count of data rows.' );
             }
 
             $whereTab = array();
@@ -287,7 +287,7 @@ abstract class eVias_ArrayObject_Db
     protected function _update()
     {
         if ( empty($this->{$this->_pk})) {
-            throw new E_ArrayObject_Exception('Could not update, primary key is not set');
+            throw new eVias_ArrayObject_Exception('Could not update, primary key is not set');
         }
 
         $this->_preUpdate();
@@ -304,7 +304,7 @@ abstract class eVias_ArrayObject_Db
     /**
      * Delete data from the database
      *
-     * @return E_ArrayObject_Abstract
+     * @return eVias_ArrayObject_Abstract
      */
     protected function _delete($where)
     {
@@ -339,7 +339,7 @@ abstract class eVias_ArrayObject_Db
     /**
      * Set the creation date
      *
-     * @return E_ArrayObject_Abstract
+     * @return eVias_ArrayObject_Abstract
      */
     protected function _setDateCreation()
     {
@@ -352,7 +352,7 @@ abstract class eVias_ArrayObject_Db
     /**
      * Set the update date
      *
-     * @return E_ArrayObject_Abstract
+     * @return eVias_ArrayObject_Abstract
      */
     protected function _setDateUpdate()
     {
