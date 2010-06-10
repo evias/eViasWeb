@@ -1,6 +1,6 @@
 <?php
 
-class AppLib_Routes 
+class AppLib_Routes
 	extends eVias_Routes
 {
 	/**
@@ -45,14 +45,32 @@ class AppLib_Routes
   						'module'	=> 'blog',
 						'controller'=> 'index',
 						'action'	=> 'save-comment')),
-// ------------- CATALOGUE ROUTES 
+// ------------- CATALOGUE ROUTES
 				'catalogue'			=> new Zend_Controller_Router_Route_Static(
 					'catalogue',
 					array(
 						'module'	=> 'catalogue',
 						'controller'=> 'index',
 						'action'	=> 'index')),
-// ------------- MEMBER ROUTES 
+    			'catalogue/articles/list' => new Zend_Controller_Router_Route_Static(
+					'catalogue/articles',
+					array(
+						'module'	=> 'catalogue',
+						'controller'=> 'index',
+						'action'	=> 'article-list')),
+    			'catalogue/categories/list' => new Zend_Controller_Router_Route_Static(
+					'catalogue/categories',
+					array(
+						'module'	=> 'catalogue',
+						'controller'=> 'index',
+						'action'	=> 'category-list')),
+				'catalogue/stats'	=> new Zend_Controller_Router_Route_Static(
+					'catalogue/stats',
+					array(
+						'module'	=> 'catalogue',
+						'controller'=> 'stats',
+						'action'	=> 'index')),
+// ------------- MEMBER ROUTES
 				'member'			=> new Zend_Controller_Router_Route_Static(
 					self::cleanUrl('Panel membre'),
 					array(

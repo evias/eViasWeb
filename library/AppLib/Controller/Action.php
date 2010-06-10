@@ -1,6 +1,6 @@
 <?php
 
-class AppLib_Controller_Action 
+class AppLib_Controller_Action
 	extends eVias_Controller_Action
 {
 
@@ -16,8 +16,14 @@ class AppLib_Controller_Action
 			$this->_session->memberObject = null;
 		}
 
-		$this->_initNavigation();
+        $this->_navigation = new Zend_Navigation;
+
+		$this->_initDefaultNav();
 	}
+
+    public function postDispatch() {
+        $this->view->navigation($this->_navigation);
+    }
 
 	/**
 	 * @return boolean [auth'ed || auth success]
@@ -54,7 +60,7 @@ class AppLib_Controller_Action
 
 		$this->_session->isAuth = false;
 		$this->_session->memberObject = null;
-		
+
 		return true;
 	}
 
@@ -72,72 +78,78 @@ class AppLib_Controller_Action
 		return $form;
 	}
 
-	// @todo : read configuration
-	private function _initNavigation() {
-		$pages = array(
-			array(
-				'type'		=> 'mvc',
-				'label'		=> 'Accueil',
-				'route'		=> 'default'
-			),
-			array(
-				'type'		=> 'mvc',
-				'label'		=> 'Blog',
-				'route'		=> 'blog'
-			),
-			array(
-				'type'		=> 'mvc',
-				'label'		=> 'Catalogue',
-				'route'		=> 'catalogue'
-			),
-			array(
-				'type'		=> 'mvc',
-				'label'		=> 'Panel membre',
-				'route'		=> 'member'
-			),
+    // @todo : read configuration
+    // @todo : ACL configuration
 
-		);
-
-		if ($this->_tryAuth()) {
-			$loggedInMenu =	array(
-				array(
-					'type' 		=> 'mvc',
-					'label' 	=> 'Me déconnecter',
-					'route' 	=> 'member/logout',
-					'class' 	=> 'sub'
-				),
-            	array(
-	        		'type'		=> 'mvc',
-	    			'label'		=> 'Mon profil',
-	    			'route'		=> 'member/profile',
-					'class' 	=> 'sub'
-		    	),
-	            array(
-		        	'type'		=> 'mvc',
-	    			'label'		=> 'Ajout de billet',
-	    			'route'		=> 'blog/write',
-	                'class'     => 'sub'
-		    	),
-            	array(
-		        	'type'		=> 'mvc',
-	    			'label'		=> 'Gestion des billets',
-	    			'route'		=> 'blog/admin',
-	                'class'     => 'sub'
-		    	),
-			);
-           
-			$pages = array_merge($pages, $loggedInMenu);
-		}
-
-		$this->_navigation = new Zend_Navigation($pages);
-		$this->view->navigation($this->_navigation);
-	}
-	
-	protected function _getNavigation() {
+    protected function _getNavigation() {
 		if (! isset($this->_navigation)) {
 			return false;
 		}
 
 		return $this->_navigation;
 	}
+
+
+
+    /*
+     * PRIVATE API
+     */
+
+    private function _initDefaultNav() {
+        $this->_initHomeNav();
+    }
+
+    private function _initHomeNav() {
+        $pages = array(
+            array(
+				'type'		=> 'mvc',
+				'label'		=> 'Accueil',
+				'route'		=> 'default'),
+            array(
+				'type'		=> 'mvc',
+				'label'		=> 'Blog',
+				'route'		=> 'blog'),
+            array(
+				'type'		=> 'mvc',
+				'label'		=> 'Catalogue',
+				'route'		=> 'catalogue'),
+ 			array(
+				'type'		=> 'mvc',
+				'label'		=> 'Panel membre',
+				'route'		=> 'member'),
+        );
+/****************************************************
+@ todo : split into correct module initialisation..
+*/
+        $loggedPages = array();
+        if ($this->_tryAuth()) {
+            $loggedPages = array(
+				array(
+					'type' 		=> 'mvc',
+					'label' 	=> 'Me déconnecter',
+					'route' 	=> 'member/logout',
+					'class' 	=> 'sub'),
+            	array(
+	        		'type'		=> 'mvc',
+	    			'label'		=> 'Mon profil',
+	    			'route'		=> 'member/profile',
+					'class' 	=> 'sub'),
+	            array(
+		        	'type'		=> 'mvc',
+	    			'label'		=> 'Ajout de billet',
+	    			'route'		=> 'blog/write',
+	                'class'     => 'sub'),
+            	array(
+		        	'type'		=> 'mvc',
+	    			'label'		=> 'Gestion des billets',
+	    			'route'		=> 'blog/admin',
+	                'class'     => 'sub'),
+            );
+        }
+
+        foreach (array_merge($pages, $loggedPages) as $page) {
+            $this->_navigation->addPage($page);
+        }
+    }
+
 }

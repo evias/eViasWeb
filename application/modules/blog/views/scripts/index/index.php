@@ -1,4 +1,4 @@
-<h1>Blog</h1>
+<h1>Derniers articles du blog</h1>
 
 <?php
 
@@ -41,7 +41,7 @@ echo <<<HTML
             <p class="comment-add" id="$articleId-addcomment" style="display:none">
                 <label for="name">Nom</label>
                 <input type="text" id="comment-name-$articleId" name="name" value="" class="comment-add" />
-                <label for="mail">Mail</label>                
+                <label for="mail">Mail</label>
                 <input type="text" id="comment-mail-$articleId" name="mail" value="" class="comment-add" /><br />
                 <label for="text">Commentaire</label><br />
                 <textarea name="text" id="comment-text-$articleId" class="comment-add"></textarea><br />
@@ -50,7 +50,7 @@ echo <<<HTML
         </p>
         <p id="$article->article_id-small" class="small-contenu">$article->small_contenu ...</p>
         <pre id="$article->article_id-full" style="display:none">$article->contenu</pre>
-    </div> 
+    </div>
 HTML;
     }
 }

@@ -18,7 +18,7 @@ class AppLib_Bootstrap
 
 		return $moduleAutoloader;
 	}
-	
+
 	/**
 	 * Create connection
 	 *
@@ -39,7 +39,7 @@ class AppLib_Bootstrap
 		$this->bootstrap('layout');
 		$layout = $this->getResource('layout');
 		$layout->setInflectorTarget(':script.:suffix');
-		$layout->setViewSuffix('php');	
+		$layout->setViewSuffix('php');
 
 		$view = new eVias_View();
 
@@ -85,7 +85,7 @@ class AppLib_Bootstrap
 	protected function _initAuth() {
 		$db = eVias_ArrayObject_Db::getDefaultAdapter();
 
-		if (! isset($db) || $db === 1) {
+		if (is_null($db)) {
 			return false;
 		}
 
