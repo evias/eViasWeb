@@ -25,6 +25,10 @@ class AppLib_Controller_Action
         $this->view->navigation($this->_navigation);
     }
 
+    public function preDispatch() {
+
+    }
+
 	/**
 	 * @return boolean [auth'ed || auth success]
 	 */
@@ -121,33 +125,7 @@ class AppLib_Controller_Action
 /****************************************************
 @ todo : split into correct module initialisation..
 */
-        $loggedPages = array();
-        if ($this->_tryAuth()) {
-            $loggedPages = array(
-				array(
-					'type' 		=> 'mvc',
-					'label' 	=> 'Me déconnecter',
-					'route' 	=> 'member/logout',
-					'class' 	=> 'sub'),
-            	array(
-	        		'type'		=> 'mvc',
-	    			'label'		=> 'Mon profil',
-	    			'route'		=> 'member/profile',
-					'class' 	=> 'sub'),
-	            array(
-		        	'type'		=> 'mvc',
-	    			'label'		=> 'Ajout de billet',
-	    			'route'		=> 'blog/write',
-	                'class'     => 'sub'),
-            	array(
-		        	'type'		=> 'mvc',
-	    			'label'		=> 'Gestion des billets',
-	    			'route'		=> 'blog/admin',
-	                'class'     => 'sub'),
-            );
-        }
-
-        foreach (array_merge($pages, $loggedPages) as $page) {
+        foreach ($pages as $page) {
             $this->_navigation->addPage($page);
         }
     }

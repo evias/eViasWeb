@@ -22,10 +22,22 @@ class AppLib_Routes
 						'action'	=> 'index')),
 // ------------- BLOG ROUTES
 				'blog'				=> new Zend_Controller_Router_Route_Static(
-					self::cleanUrl('Module de Blog'),
+					self::cleanUrl('Accueil du Blog'),
 					array(
 						'module'	=> 'blog',
 						'controller'=> 'index',
+						'action'	=> 'index')),
+				'blog/stats'		=> new Zend_Controller_Router_Route_Static(
+					self::cleanUrl('Statistiques du Blog'),
+					array(
+						'module'	=> 'blog',
+						'controller'=> 'stats',
+						'action'	=> 'index')),
+				'blog/members'		=> new Zend_Controller_Router_Route_Static(
+					self::cleanUrl('Membres du Blog'),
+					array(
+						'module'	=> 'blog',
+						'controller'=> 'members',
 						'action'	=> 'index')),
 				'blog/write'       => new Zend_Controller_Router_Route_Static(
 					self::cleanUrl('Ecrire un billet'),
@@ -89,12 +101,19 @@ class AppLib_Routes
   						'module'	=> 'member',
 						'controller'=> 'index',
 						'action'	=> 'logout')),
+				'member/stats'    => new Zend_Controller_Router_Route_Static(
+					self::cleanUrl('Profil membre'),
+					array(
+  						'module'	=> 'member',
+						'controller'=> 'stats',
+						'action'	=> 'index')),
+
 				'member/profile'    => new Zend_Controller_Router_Route_Static(
 					self::cleanUrl('Profil membre'),
 					array(
   						'module'	=> 'member',
-						'controller'=> 'index',
-						'action'	=> 'profile')),
+						'controller'=> 'profile',
+						'action'	=> 'index')),
 
 			);
 		}

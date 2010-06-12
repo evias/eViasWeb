@@ -6,16 +6,6 @@ class Member_IndexController
 
     public function init() {
         parent::init();
-        if (false === $this->_tryAuth()) {
-            $this->_forward('login');
-        }
-        else {
-            $session = $this->_getSession();
-            $this->view->userName = 'Visiteur';
-            if (false !== $session) {
-                $this->view->userName = $session->memberObject['realname'];
-            }
-        }
     }
 
 	public function indexAction()
@@ -57,7 +47,6 @@ class Member_IndexController
     public function logoutAction() {
         $exit = $this->_stopAuth();
 
-//        $flash = $this->_helper->FlashMessenger();    
         if (false === $exit) {
             $this->_helper->FlashMessenger('You have lost your session, please reconnect');
         }
@@ -66,10 +55,6 @@ class Member_IndexController
         } 
 
         $this->_redirect($this->view->url(array(), 'member/login'));
-    }
-
-    public function profileAction() {
-        $this->view->headTitle('Mon profil', 'PREPEND');
     }
 }
 
