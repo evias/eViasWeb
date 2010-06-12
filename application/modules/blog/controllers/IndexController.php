@@ -1,7 +1,7 @@
 <?php
 
-class Blog_IndexController 
-	extends AppLib_Controller_Action
+class Blog_IndexController
+	extends AppLib_Controller_Action_Blog
 {
 
     public function init() {
@@ -17,7 +17,7 @@ class Blog_IndexController
                 $this->view->userName = $session->memberObject['realname'];
             }
         }
-    
+
          $this->view->headTitle('Blog', 'PREPEND');
     }
 
@@ -82,7 +82,7 @@ class Blog_IndexController
         }
     }
 
-	public function postCommentAction() 
+	public function postCommentAction()
 	{
 		if (! $this->_hasParam('id')) {
 			echo 'HMMMM';

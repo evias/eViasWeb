@@ -9,7 +9,7 @@ class AppLib_Controller_Action_Member
         $this->_initMemberNav();
 
         if (false === $this->_tryAuth()) {
-            $this->_forward('login');
+            $this->_forward('login', 'index', 'member');
         }
         else {
             $session = $this->_getSession();
@@ -30,7 +30,8 @@ class AppLib_Controller_Action_Member
                     'type'  => 'mvc',
                     'label' => 'Statistiques',
                     'route' => 'member/stats',
-                ),            
+                    'class' => 'sub',
+                ),
             );
         }
 
@@ -53,5 +54,5 @@ class AppLib_Controller_Action_Member
         foreach (array_merge($pages, $loggedPages) as $page) {
             $this->_navigation->addPage($page);
         }
-    } 
+    }
 }

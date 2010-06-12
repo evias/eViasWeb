@@ -31,6 +31,22 @@ body {
 	float:left;
 }
 
+div#page div#menu ul.navigation li {
+    list-style-type: none;
+    padding : 0px;
+    color: #FF0000;
+}
+
+div#page div#menu ul.navigation li a.sub {
+    font: Verdana;
+    font-size: 10pt;
+    font-weight: bold;
+    text-decoration:none;
+    color: #F00;
+}
+
+
+
 #page #content
 {
 	color: #91BE3F;

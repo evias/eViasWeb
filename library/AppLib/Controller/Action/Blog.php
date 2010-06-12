@@ -15,12 +15,14 @@ class AppLib_Controller_Action_Blog
                 'type'  => 'mvc',
                 'label' => 'Statistiques',
                 'route' => 'blog/stats',
-            ),            
+                'class' => 'sub',
+            ),
             array(
                 'type'  => 'mvc',
                 'label' => 'Membres',
                 'route' => 'blog/members',
-            ),            
+                'class' => 'sub',
+            ),
         );
 
         $loggedPages = array();
@@ -42,5 +44,5 @@ class AppLib_Controller_Action_Blog
         foreach (array_merge($pages, $loggedPages) as $page) {
             $this->_navigation->addPage($page);
         }
-    } 
+    }
 }

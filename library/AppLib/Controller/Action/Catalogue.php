@@ -19,17 +19,20 @@ class AppLib_Controller_Action_Catalogue
             array(
                 'type'  => 'mvc',
                 'label' => 'Catégories',
-                'route' => 'catalogue/categories/list'
+                'route' => 'catalogue/categories/list',
+                'class' => 'sub',
             ),
             array(
                 'type'  => 'mvc',
                 'label' => 'Articles',
-                'route' => 'catalogue/articles/list'
+                'route' => 'catalogue/articles/list',
+                'class' => 'sub',
             ),
             array(
                 'type'  => 'mvc',
                 'label' => 'Statistiques',
-                'route' => 'catalogue/stats'
+                'route' => 'catalogue/stats',
+                'class' => 'sub',
             ),
         );
 

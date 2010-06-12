@@ -1,7 +1,7 @@
 <?php
 
-class Member_IndexController 
-	extends AppLib_Controller_Action
+class Member_IndexController
+	extends AppLib_Controller_Action_Member
 {
 
     public function init() {
@@ -16,7 +16,7 @@ class Member_IndexController
 
     public function loginAction() {
         $this->view->form = $this->_getLoginForm();
-        
+
         $flash = $this->_helper->FlashMessenger->getMessages();
         if (! empty($flash[0])) {
             $this->view->eViasMessage = $flash[0];
@@ -30,9 +30,9 @@ class Member_IndexController
                 $this->view->form = $this->_getLoginForm();
                 $this->render('login');
             }
-            
+
             $authResult = $this->_tryAuth($form->getValues());
-            
+
             if (false === $authResult) {
                 // auth data not valid
                 $form->setDescription('Invalid credentials provided');
@@ -41,7 +41,7 @@ class Member_IndexController
             }
             // success authentication
             $this->_redirect($this->view->url(array(), 'member'));
-        } 
+        }
     }
 
     public function logoutAction() {
@@ -52,7 +52,7 @@ class Member_IndexController
         }
         else {
             $this->_helper->FlashMessenger('You have been disconnected succesfully.');
-        } 
+        }
 
         $this->_redirect($this->view->url(array(), 'member/login'));
     }
