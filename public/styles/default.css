@@ -24,35 +24,113 @@ body {
 	font: 10pt Verdana;
 }
 
-#page #menu {
-    width: 175px;
-    height: 100%;
-	border: 0px;
-	float:left;
+
+/* --------------------------- TOOLBAR
+ */
+div#toolbar fieldset {
+    margin: auto;
+    margin-bottom: 5px;
 }
 
-div#page div#menu ul.navigation li {
+div#toolbar fieldset ul {
+    padding: 0px;
+    margin: 0px;
+}
+
+div#toolbar fieldset ul li {
+    float: left;
     list-style-type: none;
-    padding : 0px;
-    color: #FF0000;
+    padding: 0px;
+    padding-left: 10px;
 }
 
-div#page div#menu ul.navigation li a.sub {
+/* --------------------------- MENU CONTENT
+ */
+div#page div#menu {
+    margin: auto;
+    margin-top: 3px;
+    padding: 0px;
+    width: 980px;
+    height: 25px;
+    border: 2px solid #363;
+}
+
+div#page div#subMenu {
+    margin: auto;
+    margin-top: 3px;
+    padding: 0px;
+    width: 900px;
+    height: 25px;
+    border: 0px;
+    border-bottom: 1px solid #363;
+}
+
+
+ul.navigation {
+    padding: 0px;
+    margin : auto;
+    border: 0px;
+    width: 980px;
+    height: 35px;
+}
+
+ul.navigation li {
+    list-style-type: none;
+    padding : 2px;
+    color: #FF0000;
+    margin: 0px;
+    border: 0px;
+    border-right: 1px solid #363;
+    float: left;
+    background: #fff;
+}
+
+ul.navigation li:hover {
+    background: #91BE3F;
+}
+
+ul.navigation li a:visited, ul.navigation li a:link {
+    font-family: Verdana;
+    font-size: 11pt;
+    font-weight: normal;
+    text-decoration: underline;
+    color: #363;
+}
+
+ul.navigation li a:hover, ul.navigation li a:active {
+    font-family: Verdana;
+    font-size: 11pt;
+    font-weight: normal;
+    text-decoration: none;
+    color: #363;
+}
+
+ul.navigation li a.sub:visited, ul.navigation li a.sub:link {
     font: Verdana;
     font-size: 10pt;
     font-weight: bold;
     text-decoration:none;
-    color: #F00;
+    color: #363;
+}
+
+ul.navigation li a.sub:active, ul.navigation li a.sub:hover {
+    font: Verdana;
+    font-size: 10pt;
+    font-weight: bold;
+    text-decoration:none;
+    color: #363;
 }
 
 
+/* ------------------------ PAGE CONTENT
+ */
 
 #page #content
 {
 	color: #91BE3F;
 	border: 0px;
-	width: 745px;
-    float:left;
+	width: 100%;
+    margin: auto;
 }
 
 #page #content h1 {

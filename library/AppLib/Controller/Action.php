@@ -76,6 +76,15 @@ class AppLib_Controller_Action
 		return $this->_session;
 	}
 
+    protected function _initToolBar() {
+        $elements = array(
+            'Mes accès' => $this->view->url(array(), 'toolbar/myaccess'),
+            'Ma page'   => $this->view->url(array(), 'toolbar/mypage'),
+        );
+
+        $this->view->toolBar->addElements($elements);
+    }
+
 	protected function _getLoginForm() {
 		$form = new eVias_LoginForm();
 		$form->setAction($this->view->url(array(), 'member/login'));

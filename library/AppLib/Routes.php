@@ -6,7 +6,7 @@ class AppLib_Routes
 	/**
 	 * Fetch all application's routes
 	 *
-	 * @todo : read config file to fetch routes
+     * @todo : split routes into modules init !
 	 *
 	 */
 	public static function fetch() {
@@ -18,6 +18,21 @@ class AppLib_Routes
 					'/',
 					array(
 						'module'	=> 'default',
+						'controller'=> 'index',
+						'action'	=> 'index')),
+// ------------- TOOLBAR ROUTES
+				'toolbar/my/access'	=> new Zend_Controller_Router_Route_Static(
+                    'toolbar/my/access',
+					self::cleanUrl('Mes Accès'),
+					array(
+						'module'	=> 'default', // @FIXME
+						'controller'=> 'index',
+						'action'	=> 'index')),
+				'toolbar/my/page'	=> new Zend_Controller_Router_Route_Static(
+                    'toolbar/my/page',
+					self::cleanUrl('Ma page'),
+					array(
+						'module'	=> 'default', // @FIXME
 						'controller'=> 'index',
 						'action'	=> 'index')),
 // ------------- BLOG ROUTES
@@ -64,18 +79,30 @@ class AppLib_Routes
 						'module'	=> 'catalogue',
 						'controller'=> 'index',
 						'action'	=> 'index')),
-    			'catalogue/articles/list' => new Zend_Controller_Router_Route_Static(
-					'catalogue/articles',
+    			'catalogue/categories/manage' => new Zend_Controller_Router_Route_Static(
+					'catalogue/categories/gestion',
 					array(
 						'module'	=> 'catalogue',
-						'controller'=> 'index',
-						'action'	=> 'article-list')),
-    			'catalogue/categories/list' => new Zend_Controller_Router_Route_Static(
-					'catalogue/categories',
+						'controller'=> 'categories',
+						'action'	=> 'index')),
+    			'catalogue/categories/form/add' => new Zend_Controller_Router_Route_Static(
+					'catalogue/categories/ajouter',
 					array(
 						'module'	=> 'catalogue',
-						'controller'=> 'index',
-						'action'	=> 'category-list')),
+						'controller'=> 'categories',
+						'action'	=> 'add')),
+    			'catalogue/articles/manage' => new Zend_Controller_Router_Route_Static(
+					'catalogue/articles/gestion',
+					array(
+						'module'	=> 'catalogue',
+						'controller'=> 'articles',
+						'action'	=> 'index')),
+    			'catalogue/articles/form/add' => new Zend_Controller_Router_Route_Static(
+					'catalogue/articles/ajouter',
+					array(
+						'module'	=> 'catalogue',
+						'controller'=> 'articles',
+						'action'	=> 'add')),
 				'catalogue/stats'	=> new Zend_Controller_Router_Route_Static(
 					'catalogue/stats',
 					array(

@@ -41,8 +41,6 @@ class AppLib_Controller_Action_Blog
             );
         }
 
-        foreach (array_merge($pages, $loggedPages) as $page) {
-            $this->_navigation->addPage($page);
-        }
+        $this->view->subNavigation->subNavigation(array_merge($pages, $loggedPages)); // adds subpages
     }
 }

@@ -30,7 +30,6 @@ class AppLib_Controller_Action_Member
                     'type'  => 'mvc',
                     'label' => 'Statistiques',
                     'route' => 'member/stats',
-                    'class' => 'sub',
                 ),
             );
         }
@@ -41,18 +40,14 @@ class AppLib_Controller_Action_Member
 				array(
 					'type' 		=> 'mvc',
 					'label' 	=> 'Me déconnecter',
-					'route' 	=> 'member/logout',
-					'class' 	=> 'sub'),
+					'route' 	=> 'member/logout'),
             	array(
 	        		'type'		=> 'mvc',
 	    			'label'		=> 'Mon profil',
-	    			'route'		=> 'member/profile',
-					'class' 	=> 'sub'),
+	    			'route'		=> 'member/profile'),
             );
         }
 
-        foreach (array_merge($pages, $loggedPages) as $page) {
-            $this->_navigation->addPage($page);
-        }
+        $this->view->subNavigation->subNavigation(array_merge($pages, $loggedPages));
     }
 }

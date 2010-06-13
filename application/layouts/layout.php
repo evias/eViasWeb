@@ -4,7 +4,7 @@
 		<?php echo $this->headMeta(); ?>
 		<?php echo $this->headTitle(); ?>
         <?php echo $this->headScript()->appendFile('/js/prototype.js'); ?>
-        <?php echo $this->headScript()->appendFile('/js/lib/eVias/BlogArticle.js'); ?>
+        <?php echo $this->headScript()->appendFile('/js/lib/eVias/BlogArticle.js'); /* @todo: include only in blog module */ ?>
 		<?php echo $this->headLink()->prependStylesheet($this->baseUrl() . '/styles/default.css'); ?>
 	</head>
 	<body>
@@ -13,8 +13,14 @@
 				<span>eViasWeb Application - Development Platform</span>
 			</div>
 			<div id="menu">
-				<?php echo $this->navigation(); ?>	
+				<?php echo $this->navigation(); ?>
 			</div>
+            <div class="clear"></div>
+            <?php if ($this->subNavigation->countPages()) { ?>
+            <div id="subMenu">
+                <?php echo $this->subNavigation->subNavigation(array(), true); ?>
+            </div>
+            <?php } ?>
 			<div id="content">
 				<?php echo $this->layout()->content; ?>
 			</div>

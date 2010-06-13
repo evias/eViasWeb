@@ -11,6 +11,7 @@ class AppLib_Bootstrap
 			'namespace' => '',
 			'basePath'  => APPLICATION_PATH));
 
+        // register namespace for Application Library
 		// register namespace for eVias Framework
 		$libAutoloader = Zend_Loader_Autoloader::getInstance();
 		$libAutoloader->registerNamespace('AppLib_');
@@ -24,13 +25,13 @@ class AppLib_Bootstrap
 	 *
 	 */
 	protected function _initDatabaseConnection() {
+        // @FIXME: do not initialize, not needed. Models do the work
 		$args = array(
 			'host'		=> 'localhost',
 			'username'	=> 'gsaive',
 			'password'  => 'xaJae7uu',
 			'dbname'	=> 'evias'
 		);
-
 
 		eVias_ArrayObject_Db::setDefaultAdapter(new Zend_Db_Adapter_Pdo_Pgsql($args));
 	 }
@@ -47,11 +48,21 @@ class AppLib_Bootstrap
 		$view->headMeta()->appendHttpEquiv('Content-type', 'text/html;charset=utf-8');
 		$view->headTitle()->setSeparator(' - ');
 		$view->headTitle('eViasWeb Application');
-		$view->addHelperPath(dirname(__FILE__) . '/View/Helper/', 'AppLib_View_Helper');
 
 		$viewRenderer = new Zend_Controller_Action_Helper_ViewRenderer();
 		$viewRenderer->setView($view)
 					 ->setViewSuffix('php');
+
+        $subNav = new AppLib_View_Helper_subNavigation;
+        $subNav->setView($view)
+               ->addCssAttr(array('class' => 'sub'));
+
+        $view->subNavigation = $subNav;
+
+        $toolBar = new AppLib_View_Helper_toolBar;
+        $toolBar->setView($view);
+
+        $view->toolBar = $toolBar;
 
 		Zend_Controller_Action_HelperBroker::addHelper($viewRenderer);
 	}
