@@ -20,8 +20,10 @@
             <div id="subMenu">
                 <?php echo $this->subNavigation->subNavigation(array(), true); ?>
             </div>
+            <div class="clear"></div>
             <?php } ?>
 			<div id="content">
+                <?php echo $this->myHistory->display(); ?>
 				<?php echo $this->layout()->content; ?>
 			</div>
             <div class="clear"></div>

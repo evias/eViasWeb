@@ -64,6 +64,11 @@ class AppLib_Bootstrap
 
         $view->toolBar = $toolBar;
 
+        $myHistory = new AppLib_View_Helper_myHistory;
+        $myHistory->setView($view);
+
+        $view->myHistory = $myHistory;
+
 		Zend_Controller_Action_HelperBroker::addHelper($viewRenderer);
 	}
 

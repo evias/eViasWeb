@@ -24,6 +24,46 @@ body {
 	font: 10pt Verdana;
 }
 
+/* --------------------------- MY HISTORY
+ */
+div#myHistory {
+    border: 1px solid #363;
+    margin: 3px;
+    height: 30px;
+}
+
+div#myHistory ul {
+    padding: 0px;
+    margin: 0px;
+}
+
+div#myHistory ul li {
+    list-style-type: none;
+    color: #363;
+    font-family: Verdana;
+    font-size: 9pt;
+}
+
+div#myHistory ul li.history {
+    color: #363;
+    float:left;
+    list-style-type: none;
+}
+
+div#myHistory ul li a:link, div#myHistory ul li a:visited {
+    font-family: Verdana;
+    font-size: 8pt;
+    text-decoration: none;
+    color: #363;
+}
+
+div#myHistory ul li a:hover, div#myHistory ul li a:active {
+    font-family: Verdana;
+    font-size: 8pt;
+    text-decoration: underline;
+    color: #363;
+}
+
 
 /* --------------------------- TOOLBAR
  */

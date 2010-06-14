@@ -5,6 +5,15 @@ class Catalogue_ArticlesController
 {
     public function init() {
         parent::init();
+
+        $elements = array();
+        if ($this->_tryAuth()) {
+            $elements = array(
+                'Ajouter article'   => $this->view->url(array(), 'catalogue/articles/form/add'),
+            );
+        }
+
+        $this->view->toolBar->addElements($elements);
     }
 
     public function indexAction() {

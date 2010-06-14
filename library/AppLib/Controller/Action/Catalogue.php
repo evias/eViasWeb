@@ -12,8 +12,6 @@ class AppLib_Controller_Action_Catalogue
         $this->_initCatalogueNav();
 
         $this->_dataModel = new eVias_Service_Catalogue;
-
-        $this->_initCatalogueToolBar();
     }
 
     protected function _initCatalogueNav() {
@@ -42,17 +40,5 @@ class AppLib_Controller_Action_Catalogue
         }
 
         $this->view->subNavigation->subNavigation(array_merge($pages,$loggedPages));
-    }
-
-    protected function _initCatalogueToolBar() {
-        $elements = array();
-        if ($this->_tryAuth()) {
-            $elements = array(
-                'Ajouter catégorie' => $this->view->url(array(), 'catalogue/categories/form/add'),
-                'Ajouter article'   => $this->view->url(array(), 'catalogue/articles/form/add'),
-            );
-        }
-
-        $this->view->toolBar->addElements($elements);
     }
 }
