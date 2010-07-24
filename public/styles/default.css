@@ -74,16 +74,32 @@ div#toolbar fieldset {
     margin-bottom: 5px;
 }
 
-div#toolbar fieldset ul {
+div#toolbar fieldset ul.toolbar-list {
     padding: 0px;
     margin: 0px;
 }
 
-div#toolbar fieldset ul li {
+div#toolbar fieldset ul.toolbar-list li {
     float: left;
     list-style-type: none;
     padding: 0px;
     padding-left: 10px;
+    margin-right: 5px;
+}
+
+div#toolbar fieldset select.toolbar-select {
+    font-family: Verdana;
+    font-size: 10pt;
+    font-weight: bold;
+    background: #fff;
+    color : #363;
+}
+
+div#toolbar fieldset select.toolbar-select option {
+    font-family: Verdana;
+    font-size: 10pt;
+    font-weight: bold;
+    color: #363;
 }
 
 /* --------------------------- MENU CONTENT

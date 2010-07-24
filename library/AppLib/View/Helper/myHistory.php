@@ -13,9 +13,9 @@ class AppLib_View_Helper_myHistory
             $xHtml .= '<div id="myHistory">';
 
             $xHtml .= '<ul>';
-            $xHtml .= '<li class="title">Historique: </li>';
+            $xHtml .= '<li>Historique: </li>';
             foreach ($this->_histories as $label => $url) {
-                $xHtml .= '<li>';
+                $xHtml .= '<li class="history">';
                 $xHtml .= '<a href="' . $url . '">&gt;' . $label . '</a>';
                 $xHtml .= '</li>';
             }
@@ -43,5 +43,10 @@ class AppLib_View_Helper_myHistory
         $this->_histories = array_merge ($this->_histories, $history);
 
         return $this;
+    }
+
+    public function lastUrl() {
+        // if empty back to default
+        return empty($this->_histories) ? '/' : $this->_histories[count($this->_histories)-1];
     }
 }

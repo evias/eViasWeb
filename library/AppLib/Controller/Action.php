@@ -60,7 +60,7 @@ class AppLib_Controller_Action
 	protected function _stopAuth() {
 		if (! isset($this->_session)) {
 			return false;
-		}
+		    }
 
 		$this->_session->isAuth = false;
 		$this->_session->memberObject = null;
@@ -75,6 +75,26 @@ class AppLib_Controller_Action
 
 		return $this->_session;
 	}
+
+    protected function _paramsFromFields(array $fields, $returnEmpty = true) {
+        $params = array();
+
+        foreach ($fields as $index => $fieldName) {
+            $params[$fieldName] = '';
+            if ($this->_hasParam($fieldName)) {
+                $paramVal = $this->_getParam($fieldName);
+                $params[$fieldName] = $paramVal;
+
+                if (! $returnEmpty && (empty($paramVal) || is_null($paramVal)))
+                    unset($params[$fieldName]);
+            }
+            else
+                if (! $returnEmpty)
+                    unset($params[$fieldName]);
+        }
+
+        return $params;
+    }
 
     protected function _initToolBar() {
         $elements = array(

@@ -23,7 +23,7 @@ class AppLib_Routes
 // ------------- TOOLBAR ROUTES
 				'toolbar/my/access'	=> new Zend_Controller_Router_Route_Static(
                     'toolbar/my/access',
-					self::cleanUrl('Mes Accès'),
+					self::cleanUrl('Mes AccÃ¨s'),
 					array(
 						'module'	=> 'default', // @FIXME
 						'controller'=> 'index',
@@ -91,6 +91,25 @@ class AppLib_Routes
 						'module'	=> 'catalogue',
 						'controller'=> 'categories',
 						'action'	=> 'add')),
+    			'catalogue/categories/sort' => new Zend_Controller_Router_Route(
+					'catalogue/categories/ordonner/:order',
+					array(
+						'module'	=> 'catalogue',
+						'controller'=> 'categories',
+						'action'	=> 'sort')),
+    			'catalogue/categories/form/edit' => new Zend_Controller_Router_Route(
+					'catalogue/categories/modifier/:id',
+					array(
+						'module'	=> 'catalogue',
+						'controller'=> 'categories',
+						'action'	=> 'edit'),
+                    array('id' => '\d+')),
+    			'catalogue/categories/form/process' => new Zend_Controller_Router_Route_Static(
+					'catalogue/categories/sauvegarde',
+					array(
+						'module'	=> 'catalogue',
+						'controller'=> 'categories',
+						'action'	=> 'process')),
     			'catalogue/articles/manage' => new Zend_Controller_Router_Route_Static(
 					'catalogue/articles/gestion',
 					array(
