@@ -208,6 +208,13 @@ ul.navigation li a.sub:active, ul.navigation li a.sub:hover {
     border: 1px dashed #ff6;
 }
 
+#page #content div#home {
+    text-align: center;
+    margin: 15px;
+    margin-left: 150px;
+    width: 500px;
+}
+
 #page #content p {
     color: #444;
 	font: 10pt Verdana;

@@ -140,6 +140,10 @@ class AppLib_Controller_Action
 				'route'		=> 'default'),
             array(
 				'type'		=> 'mvc',
+				'label'		=> 'Présentation',
+				'route'		=> 'presentation'),
+            array(
+				'type'		=> 'mvc',
 				'label'		=> 'Blog',
 				'route'		=> 'blog'),
             array(
@@ -151,9 +155,7 @@ class AppLib_Controller_Action
 				'label'		=> 'Panel membre',
 				'route'		=> 'member'),
         );
-/****************************************************
-@ todo : split into correct module initialisation..
-*/
+
         foreach ($pages as $page) {
             $this->_navigation->addPage($page);
         }
