@@ -28,8 +28,8 @@ class AppLib_Bootstrap
         // @FIXME: do not initialize, not needed. Models do the work
 		$args = array(
 			'host'		=> 'localhost',
-			'username'	=> 'gsaive',
-			'password'  => 'xaJae7uu',
+			'username'	=> 'dev',
+			'password'  => 'opendev',
 			'dbname'	=> 'evias'
 		);
 
