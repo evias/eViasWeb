@@ -5,3 +5,6 @@
 # BEFORE WORK:
 # /eviasweb/library/Zend
 # should point to your zf-1.9.7 directory .
+#
+# git clone git@github.com:evias/eviasphp.git library/
+# mv library/eviasphp library/eVias
