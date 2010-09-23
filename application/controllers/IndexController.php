@@ -17,6 +17,21 @@ class IndexController
     {
         $this->view->headTitle('Informations personnelles', 'PREPEND');
     }
+
+    public function languageAction ()
+    {
+        if (isset($_GET['lang'])) {
+            $lang = $this->_getParam('lang');
+
+            if( ! in_array($lang, array('fr', 'en', 'de')) )
+                $lang = 'fr';
+
+            $langSession = new Zend_Session_Namespace ('language');
+            $langSession->lang = $lang;
+        }
+
+        $this->_redirect($this->view->url(array(), 'default'));
+    }
 }
 
 

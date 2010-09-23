@@ -32,6 +32,12 @@ class AppLib_Routes
                         'module'    => 'default',
                         'controller'=> 'index',
                         'action'    => 'informations')),
+                'language'      => new Zend_Controller_Router_Route(
+                    'langue',
+                    array (
+                        'module'    => 'default',
+                        'controller'=> 'index',
+                        'action'    => 'language')),
 // ------------- TOOLBAR ROUTES
 				'toolbar/my/access'	=> new Zend_Controller_Router_Route_Static(
                     'toolbar/my/access',

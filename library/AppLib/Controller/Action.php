@@ -19,6 +19,10 @@ class AppLib_Controller_Action
         $this->_navigation = new Zend_Navigation;
 
 		$this->_initDefaultNav();
+
+        $langSession = new Zend_Session_Namespace ("language");
+        if (empty ($langSession->lang))
+            $langSession->lang = 'fr';
 	}
 
     public function postDispatch() {

@@ -1,0 +1,2 @@
+msgid "__TITLE_HOME_PAGE__"
+msgstr ""

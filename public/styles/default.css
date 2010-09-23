@@ -19,6 +19,21 @@ body {
 	height: 24px;
 }
 
+#page #header #lang-selector {
+    border : 1px;
+    float: right;
+}
+
+#page #header #lang-selector ul {
+    margin: 0px;
+    padding: 0px;
+}
+
+#page #header #lang-selector ul li {
+    float: left;
+    list-style-type: none;
+}
+
 /* --------------------------- MY HISTORY
  */
 div#myHistory {

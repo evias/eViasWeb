@@ -1,9 +1,19 @@
 <?php
 
+if (! function_exists ('__')) {
+    function __($key)
+    {
+        $langSession = new Zend_Session_Namespace('language');
+
+        return AppLib_Bootstrap::langAdapter()->_($key, $langSession->lang);
+    }
+}
+
 class AppLib_Bootstrap
 	extends Zend_Application_Bootstrap_Bootstrap
 {
 	public static $_authAdapter = null;
+    public static $_langAdapter = null;
 
 	public function _initAutoloader() {
 		// register default namespace
@@ -120,6 +130,21 @@ class AppLib_Bootstrap
 
 		return self::$_authAdapter;
 	}
+
+    public static function langAdapter() {
+        if (! isset(self::$_langAdapter)) {
+            self::initializeLocales();
+        }
+
+        return self::$_langAdapter;
+    }
+
+    private static function initializeLocales()
+    {
+        self::$_langAdapter = new Zend_Translate ('gettext', APPLICATION_PATH . "/locales/fr/LC_MESSAGES/messages.mo", "fr");
+        self::$_langAdapter->addTranslation (APPLICATION_PATH . '/locales/en/LC_MESSAGES/messages.mo', "en");
+        self::$_langAdapter->addTranslation (APPLICATION_PATH . '/locales/de/LC_MESSAGES/messages.mo', "de");
+    }
 
 	private function _getRoutes() {
 		return AppLib_Routes::fetch();

@@ -1,5 +1,5 @@
 <h1>Saive Grégory</h1>
-<h2>Développeur C / C++ / PHP (4-5) / Javascript</h2>
+<h2><?php echo __("__TITLE_HOME_PAGE__"); ?></h2>
 
 <div align="center" id="home">
 <p>
