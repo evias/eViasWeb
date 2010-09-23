@@ -12,6 +12,11 @@ class IndexController
 	{
 		$this->view->headTitle('Présentation', 'PREPEND');
     }
+
+    public function informationsAction()
+    {
+        $this->view->headTitle('Informations personnelles', 'PREPEND');
+    }
 }
 
 

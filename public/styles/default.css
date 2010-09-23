@@ -19,11 +19,6 @@ body {
 	height: 24px;
 }
 
-#page #header span {
-	text-align: center;
-	font: 10pt Verdana;
-}
-
 /* --------------------------- MY HISTORY
  */
 div#myHistory {
@@ -198,11 +193,11 @@ ul.navigation li a.sub:active, ul.navigation li a.sub:hover {
 
 #page #content h2 {
     margin-left: 10%;
-    color: #fff;
+    color: #363;
     font-family: Verdana;
     font-size: 12pt;
     font-weight: bold;
-    background-color: #363;
+    background-color: #fff;
     text-align: center;
     width: 80%;
     border: 1px dashed #ff6;
@@ -348,3 +343,73 @@ a:hover,
 a:active {
 	text-decoration:none;
 }
+
+h3 a:link,
+h3 a:visited {
+    font-family: Verdana;
+    font-size: 10pt;
+    font-weight: normal;
+    text-decoration: underline;
+    color: #363;
+}
+
+h3 a:active,
+h3 a:hover {
+    font-family: Verdana;
+    font-size: 10pt;
+    font-weight: normal;
+    text-decoration: none;
+    color: #000;
+}
+
+
+div.table-content {
+    width: 80%;
+    margin: auto;
+}
+
+div.table-content div.left {
+    float: left;
+    width: 49%;
+}
+
+div.table-content div.right {
+    float: left;
+    width: 49%;
+    margin: 0px;
+    margin-left: 10px;
+}
+
+div.table-content div table tbody tr th {
+    width: 30%;
+    text-align: right;
+
+}
+
+div.table-content div table tbody tr th span {
+    font-family: Verdana;
+    font-size: 9pt;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+div.table-content div table tbody tr td span {
+    font-family: Verdana;
+    font-size: 9pt;
+    font-weight: normal;
+    text-decoration: none;
+}
+
+div.table-content div p {
+    text-align: justify;
+}
+
+div.table-content div p span {
+    font-family: Verdana;
+    font-size: 9pt;
+    font-weight: normal;
+    text-decoration: none;
+    color: #000;
+    margin: 4px;
+}
+

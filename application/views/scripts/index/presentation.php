@@ -1,4 +1,4 @@
-<H1>Développement modulaire</h1>
+<h2>Développement modulaire</h2>
 <p>
 Je vous souhaite la bienvenue sur mon serveur web dédié au développement web et logiciel.
 </p>

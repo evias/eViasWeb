@@ -140,6 +140,10 @@ class AppLib_Controller_Action
 				'route'		=> 'default'),
             array(
 				'type'		=> 'mvc',
+				'label'		=> 'Informations personnelles',
+				'route'		=> 'informations'),
+            array(
+				'type'		=> 'mvc',
 				'label'		=> 'Présentation',
 				'route'		=> 'presentation'),
             array(

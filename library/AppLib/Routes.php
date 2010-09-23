@@ -26,6 +26,12 @@ class AppLib_Routes
                         'module'    => 'default',
                         'controller'=> 'index',
                         'action'    => 'presentation')),
+                'informations'      => new Zend_Controller_Router_Route_Static(
+                    'informations',
+                    array (
+                        'module'    => 'default',
+                        'controller'=> 'index',
+                        'action'    => 'informations')),
 // ------------- TOOLBAR ROUTES
 				'toolbar/my/access'	=> new Zend_Controller_Router_Route_Static(
                     'toolbar/my/access',
