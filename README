@@ -1,6 +1,10 @@
-# this project is a pure development platform
-# i want to easy myself's way of working in providing
-# a simple way to work to me and other developpers
+# eViasWeb platform
+#
+# This platform is completely open source and mostly
+# developed to introduce myself and my projects.
+# Some of my web modules will be tested using this platform.
+# This means that some of the features may be buggy or
+# not finished.
 
 # BEFORE WORK:
 # /eviasweb/library/Zend
