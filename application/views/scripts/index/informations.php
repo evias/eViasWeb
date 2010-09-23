@@ -1,7 +1,7 @@
 <h2>Informations personnelles</h2>
 
-<h3><a href="web.evias.be/storage/CV-fr.doc">Télécharger le Curriculum Vitae en français.</a></h3>
-<h3><a href="web.evias.be/storage/CV-en.doc">Download the resume in english.</a></h3>
+<h3><a href="storage/CV-fr.doc">Télécharger le Curriculum Vitae en français.</a></h3>
+<h3><a href="storage/CV-en.doc">Download the resume in english.</a></h3>
 
 <div class="table-content">
     <div class="left">
