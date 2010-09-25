@@ -5,7 +5,7 @@ if (! function_exists ('__')) {
     {
         $langSession = new Zend_Session_Namespace('language');
 
-        return AppLib_Bootstrap::langAdapter()->_($key, $langSession->lang);
+        return AppLib_Bootstrap::langAdapter()->_($key, empty($langSession->lang) ? "fr" : $langSession->lang);
     }
 }
 

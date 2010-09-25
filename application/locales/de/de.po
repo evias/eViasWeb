@@ -9,5 +9,157 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-msgid "__TITLE_HOME_PAGE__"
+msgid "__HOME_PAGE_TITLE__"
 msgstr "C / C++ / PHP (4-5) / Javascript Programmierer"
+
+msgid "__HOME_PAGE_FIRST_P__"
+msgstr ""
+"Ich heiße Sie herzlich Wilkommen auf meiner Webseite. Diese dient dazu meine "
+"Hauptprojekte vorzustellen. Die Seite wird als Open Source veröffentlicht, Sie "
+"können die Quellcode Dateien <a href=\"http://github.com/evias/eViasWeb\">hier</a> downloaden."
+
+msgid "__HOME_PAGE_SECOND_P__"
+msgstr ""
+"Meine persönlichen Angaben, mein Lebenslauf und meine Referenzen sind für jeden "
+"zugänglich. Das 'Contact me' Tab dient dazu Ihnen bei Ihrer Anfrage an mir zu helfen "
+"indem es manche oft vorkommende Informationen von sich ausfüllt. Eine Web oder Software "
+"Entwicklung Anfrage erfordert immer eine spezifische und klare Fall Studie. Dies kann "
+"dazu führen dass meine Antwortszeit von 1 bis zu 3 Tage variiert."
+
+msgid "__HOME_PAGE_THIRD_P__"
+msgstr ""
+"Die zugängliche Module sind nicht mit ausgereifte Entwicklungen zu vergleichen. "
+"Eine Erscheinung von einem Modul auf diese Plattform gleicht einen Produktion "
+"Test des Moduls. Bis jetzt können nur Mitglieder der Plattform diese Features "
+"sehen, dies sollte sich jedoch ändern sobald die Sicherheit Maßnahmen ausreichend "
+"getestet wurden."
+
+msgid "__SIGNATURE__"
+msgstr ""
+"Mit freundlichen Grüßen, <br /><br />"
+"SAIVE Grégory"
+
+msgid "__MENU_LINK_HOME__"
+msgstr "Startseite"
+
+msgid "__MENU_LINK_INFO__"
+msgstr "Persönliche Angaben"
+
+msgid "__MENU_LINK_PRESENT__"
+msgstr "Artikel"
+
+msgid "__MENU_LINK_CATALOGUE__"
+msgstr "Portfolio"
+
+msgid "__MENU_LINK_MEMBER__"
+msgstr "Mitglied Panel"
+
+msgid "__PLATFORM_HEADER_TEXT__"
+msgstr "eViasWeb - Open Source Development Platform"
+
+msgid "__PLATFORM_FOOTER_TEXT__"
+msgstr "eViasWeb - Eine Entwicklung von <a href=\"mailto:saive.gregory@gmail.com\">Grégory Saive</a>"
+
+msgid "__INFO_PAGE_TITLE__"
+msgstr "Persönliche Angaben"
+
+msgid "__INFO_FIRST_TABLE_TITLE__"
+msgstr "Kontakt Angaben"
+
+msgid "__INFO_NAME__"
+msgstr "Name:"
+
+msgid "__INFO_FIRSTNAME__"
+msgstr "Vorname:"
+
+msgid "__INFO_TELEPHONE__"
+msgstr "Tel.:"
+
+msgid "__INFO_MAIL__"
+msgstr "Mail:"
+
+msgid "__INFO_SECOND_TABLE_TITLE__"
+msgstr "Angebotene Fähigkeiten:"
+
+msgid "__INFO_LANGUAGES__"
+msgstr "Programmiersprachen:"
+
+msgid "__INFO_SGBD__"
+msgstr "DBMS:"
+
+msgid "__INFO_LIBS_CPP__"
+msgstr "C++ Libraries/API:"
+
+msgid "__INFO_LIBS_PHP__"
+msgstr "PHP Libraries/API:"
+
+msgid "__INFO_LIBS_JS__"
+msgstr "Javascript Libraries:"
+
+msgid "__INFO_COMPETENCES__"
+msgstr "Fähigkeiten:"
+
+msgid "__INFO_DATA_COMPETENCES__"
+msgstr ""
+"Back-end Entwicklungen, Front-End Javascript Entwicklungen, "
+"Programm Architektur, Datenbank design, Installation von Software server"
+
+msgid "__INFO_THIRD_TABLE_TITLE__"
+msgstr "Entwicklung von Webprogramme"
+
+msgid "__INFO_FOURTH_TABLE_TITLE__"
+msgstr "Entwicklung von Desktopprogramme"
+
+msgid "__INFO_DATA_WEBDEV_1__"
+msgstr ""
+"Vor fünf Jahren ungefähr habe ich diese neue Art Programme frei zu geben kennen gelernt. "
+"Es ist jetzt möglich aus einer Webseite, eine komplette Anwendung zu machen. Mit sogenannten "
+"Script Sprachen wie PHP und Javascript, ist es durchaus möglich Programme zu enwickeln, die "
+"deren Desktop Konkurrenten in jeder hinsicht ausgleichen, und manchmal sogar übertreffen."
+
+msgid "__INFO_DATA_WEBDEV_2__"
+msgstr ""
+"Die neusten Web standards erlauben uns Developpers, konkrete User Interfaces (häufig UI gennant) "
+"zu entwickeln. Dank der neuen Technologie ist es Heut-zutage einfach, dynamische und ergonomische "
+"Anwendungen frei zu geben."
+
+msgid "__INFO_DATA_WEBDEV_3__"
+msgstr ""
+"Die Entwicklungszeit solcher Anwendungen ist kürzer als bei Desktop Programme und eine Web "
+"Anwendung ist immer ausführbar, wenn man einen Browser besitzt. (Mozilla Firefox, Google Chrome, "
+"Internet Explorer,...)"
+
+msgid "__INFO_DATA_APPDEV_1__"
+msgstr ""
+"Im laufe des Jahre 2000 (mit 12 also), habe ich angefangen Desktop Programme mit C / Win32 "
+"und C++ / Qt zu entwickeln. Jedoch war ich noch jung und die Anwendungen waren nur klein und "
+"nutzlos, für das Meiste."
+
+msgid "__INFO_DATA_APPDEV_2__"
+msgstr ""
+"Sobald die Programme, die man entwickelt, ein größeres Maß an Verantwortung betreffen, ist es "
+"wichtig eine Sekurisierte und klare Anwendungsbasis zu haben."
+
+msgid "__INFO_DATA_APPDEV_3__"
+msgstr ""
+"Deswegen habe ich mich in den letzten 2 Jahre damit beschäftigt, eine Bibliothek zu entwickeln, "
+"die mir dabei hilft meine Entwicklungszeit zu verkleinern. Wenn diese Basis benutzbar ist, wird "
+"das Entwickeln von Programme nämlich nur noch damit zusammengefasst dass man die verschiedenen "
+"Business Schichten und die UIs zu entwickeln hat. Auf dieser Hinsicht wird die Entwicklungszeit "
+"um einiges gekürzt."
+
+msgid "__URL_REWRITE_BLOG_HOME__"
+msgstr "Artikel Startseite"
+
+msgid "__URL_REWRITE_PERSONAL_INFO__"
+msgstr "Persönliche Angaben"
+
+msgid "__URL_REWRITE_BLOG_MEMBERS__"
+msgstr "Mitglieder"
+
+msgid "__URL_REWRITE_BLOG_WRITE__"
+msgstr "Artikel hinzufügen"
+
+msgid "__URL_REWRITE_BLOG_ADMIN__"
+msgstr "Artikel Verwaltung"
+

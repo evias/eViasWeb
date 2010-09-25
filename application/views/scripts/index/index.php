@@ -1,31 +1,20 @@
 <h1>Saive Grégory</h1>
-<h2><?php echo __("__TITLE_HOME_PAGE__"); ?></h2>
+<h2><?php echo __("__HOME_PAGE_TITLE__"); ?></h2>
 
 <div align="center" id="home">
 <p>
-Je vous souhaite la bienvenue sur mon site web personnel. Il s'agit d'une plateforme
-de développement open source. Il est en effet possible de télécharger le code source
-de cette application depuis <a href="http://github.com/evias/eViasWeb">le dépôt GIT public</a>.
+    <?php echo __('__HOME_PAGE_FIRST_P__'); ?>
 </p>
 
 <p>
-L'accès à mes informations personnelles, mon CV et mes références est public. Il
-vous est également possible de me contacter via l'onglet Contact. Toute demande de
-développement nécessite une étude de cas précise, je vous demande donc d'accepter
-un délai de 1 à 3 jour(s) pour répondre à votre demande.
+    <?php echo __('__HOME_PAGE_SECOND_P__'); ?>
 </p>
 
 <p>
-Tout développement publié sur la plateforme eViasWeb ne peut être considérer comme
-développement fini. Une publication sur cette plateforme équivaut à une mise en
-test d'un module sur un environnement de production. Pour l'instant, seul les
-membres ont accès à la plupart des modules implémentés. Un accès unanime est prévu
-dès lors que les tests de sécurités auront été portés a bien.
+    <?php echo __('__HOME_PAGE_THIRD_P__'); ?>
 </p>
 
 <p>
-Amicalement,<br /><br />
-
-SAIVE Grégory
+    <?php echo __('__SIGNATURE__'); ?>
 </p>
 </div>

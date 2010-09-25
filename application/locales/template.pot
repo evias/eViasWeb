@@ -1,2 +1,15 @@
-msgid "__TITLE_HOME_PAGE__"
+
+msgid "__HOME_PAGE_TITLE__"
+msgstr ""
+
+msgid "__HOME_PAGE_FIRST_P__"
+msgstr ""
+
+msgid "__HOME_PAGE_SECOND_P__"
+msgstr ""
+
+msgid "__HOME_PAGE_THIRD_P__"
+msgstr ""
+
+msgid "__SIGNATURE__"
 msgstr ""

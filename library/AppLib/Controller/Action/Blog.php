@@ -13,12 +13,6 @@ class AppLib_Controller_Action_Blog
         $pages = array(
             array(
                 'type'  => 'mvc',
-                'label' => 'Statistiques',
-                'route' => 'blog/stats',
-                'class' => 'sub',
-            ),
-            array(
-                'type'  => 'mvc',
                 'label' => 'Membres',
                 'route' => 'blog/members',
                 'class' => 'sub',

@@ -20,6 +20,7 @@ class IndexController
 
     public function languageAction ()
     {
+        $refUrl = '/';
         if (isset($_GET['lang'])) {
             $lang = $this->_getParam('lang');
 
@@ -28,9 +29,13 @@ class IndexController
 
             $langSession = new Zend_Session_Namespace ('language');
             $langSession->lang = $lang;
+
+            if (isset($_GET['ref'])) {
+                $refUrl = $_GET['ref'];
+            }
         }
 
-        $this->_redirect($this->view->url(array(), 'default'));
+        $this->_redirect ($refUrl);
     }
 }
 

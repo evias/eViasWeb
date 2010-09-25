@@ -1,3 +1,10 @@
+<?php
+    $refUrl      = $_SERVER['REQUEST_URI'];
+    $frenchLink  = $this->url (array(), 'language') . '?lang=fr&ref=' . $refUrl;
+    $englishLink = $this->url (array(), 'language') . '?lang=en&ref=' . $refUrl;
+    $germanLink  = $this->url (array(), 'language') . '?lang=de&ref=' . $refUrl;
+?>
+
 <?php echo $this->doctype(); ?>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 	<head>
@@ -10,12 +17,12 @@
 	<body>
 		<div id="page">
 			<div id="header">
-				<span>eViasWeb Application - Development Platform</span>
+				<span><?php echo __('__PLATFORM_HEADER_TEXT__'); ?></span>
                 <div id="lang-selector">
                     <ul>
-                        <li><a href="<?php echo $this->url (array(), 'language'); ?>?lang=fr"><img src="storage/images/french.jpg" /></a></li>
-                        <li><a href="<?php echo $this->url (array(), 'language'); ?>?lang=en"><img src="storage/images/english.jpg" /></a></li>
-                        <li><a href="<?php echo $this->url (array(), 'language'); ?>?lang=de"><img src="storage/images/german.jpg" /></a></li>
+                        <li><a href="<?php echo $frenchLink; ?>"><img src="storage/images/french.jpg" /></a></li>
+                        <li><a href="<?php echo $englishLink; ?>"><img src="storage/images/english.jpg" /></a></li>
+                        <li><a href="<?php echo $germanLink; ?>"><img src="storage/images/german.jpg" /></a></li>
                     </ul>
                     <div class="clear"></div>
                 </div>
@@ -36,15 +43,8 @@
 			</div>
             <div class="clear"></div>
 			<div id="footer">
-				<span>Open Source web platform by <a href="mailto:evias.services@gmail.com">Grégory Saive</a></span>
+				<span><?php echo __('__PLATFORM_FOOTER_TEXT__'); ?></span>
 			</div>
 		</div>
-        <div>
-        <pre>
-        <?php
-            var_dump($_SESSION);
-        ?>
-        </pre>
-        </div>
 	</body>
 </html>

@@ -1,13 +1,167 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"PO-Revision-Date: 2010-09-23 10:35+0000\n"
-"Last-Translator: Dveloppeur <saive.gregory@gmail.com>\n"
-"Language-Team: French\n"
+"PO-Revision-Date: 2010-09-23 12:20+0000\n"
+"Last-Translator: Développeur <dev@eviasdev>\n"
+"Language-Team: English\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-msgid "__TITLE_HOME_PAGE__"
+msgid "__HOME_PAGE_TITLE__"
 msgstr "Développeur C / C++ / PHP (4-5) / Javascript"
+
+msgid "__HOME_PAGE_FIRST_P__"
+msgstr ""
+"Je vous souhaite la bienvenue sur mon site web personnel. Il s'agit d'une plateforme "
+"de développement open source. Il est en effet possible de télécharger le code source "
+"de cette application depuis <a href=\"http://github.com/evias/eViasWeb\">le dépôt GIT public</a>."
+
+msgid "__HOME_PAGE_SECOND_P__"
+msgstr ""
+"L'accès à mes informations personnelles, mon CV et mes références est public. Il "
+"vous est également possible de me contacter via l'onglet Contact. Toute demande de "
+"développement nécessite une étude de cas précise, je vous demande donc d'accepter "
+"un délai de 1 à 3 jour(s) pour répondre à votre demande."
+
+msgid "__HOME_PAGE_THIRD_P__"
+msgstr ""
+"Tout développement publié sur la plateforme eViasWeb ne peut être considérer comme "
+"développement fini. Une publication sur cette plateforme équivaut à une mise en "
+"test d'un module sur un environnement de production. Pour l'instant, seul les "
+"membres ont accès à la plupart des modules implémentés. Un accès unanime est prévu "
+"dès lors que les tests de sécurités auront été portés a bien."
+
+msgid "__SIGNATURE__"
+msgstr ""
+"Amicalement, <br /><br />"
+"SAIVE Grégory"
+
+msgid "__MENU_LINK_HOME__"
+msgstr "Accueil"
+
+msgid "__MENU_LINK_INFO__"
+msgstr "Informations personnelles"
+
+msgid "__MENU_LINK_PRESENT__"
+msgstr "Articles"
+
+msgid "__MENU_LINK_CATALOGUE__"
+msgstr "Portfolio"
+
+msgid "__MENU_LINK_MEMBER__"
+msgstr "Panel membre"
+
+msgid "__PLATFORM_HEADER_TEXT__"
+msgstr "eViasWeb - Plateforme de développement Open Source"
+
+msgid "__PLATFORM_FOOTER_TEXT__"
+msgstr "eViasWeb - Un développement de <a href=\"mailto:saive.gregory@gmail.com\">Grégory Saive</a>"
+
+msgid "__INFO_PAGE_TITLE__"
+msgstr "Informations personnelles"
+
+msgid "__INFO_FIRST_TABLE_TITLE__"
+msgstr "Coordonnées civiles"
+
+msgid "__INFO_NAME__"
+msgstr "Nom:"
+
+msgid "__INFO_FIRSTNAME__"
+msgstr "Prénom:"
+
+msgid "__INFO_TELEPHONE__"
+msgstr "Tél.:"
+
+msgid "__INFO_MAIL__"
+msgstr "Mail:"
+
+msgid "__INFO_SECOND_TABLE_TITLE__"
+msgstr "Compétences proposées"
+
+msgid "__INFO_LANGUAGES__"
+msgstr "Langages:"
+
+msgid "__INFO_SGBD__"
+msgstr "SGBD:"
+
+msgid "__INFO_LIBS_CPP__"
+msgstr "Librairies/API C++:"
+
+msgid "__INFO_LIBS_PHP__"
+msgstr "Librairies/API PHP:"
+
+msgid "__INFO_LIBS_JS__"
+msgstr "Librairies Javascript:"
+
+msgid "__INFO_COMPETENCES__"
+msgstr "Compétences:"
+
+msgid "__INFO_DATA_COMPETENCES__"
+msgstr ""
+"Développements back-end, développements Javascript, "
+"architecture applicative, conception de base de données, "
+"mise en place de serveurs applicatifs."
+
+msgid "__INFO_THIRD_TABLE_TITLE__"
+msgstr "Développement web"
+
+msgid "__INFO_FOURTH_TABLE_TITLE__"
+msgstr "Développement logiciel"
+
+msgid "__INFO_DATA_WEBDEV_1__"
+msgstr ""
+"J'ai découvert le monde des applications web il y a maintenant 5 ans. Je suis heureux "
+"d'annoncer avoir acquit les connaissances requises aux développement d'applications "
+"web actuelles (PHP5 / Javascript / HTML5 / CSS3). Les plateformes applicatives sont en constante évolution et les navigateurs "
+"ne cessent d'évoluer."
+
+msgid "__INFO_DATA_WEBDEV_2__"
+msgstr ""
+"C'est pourquoi il est nécessaire de suivre l'actualité des technologies Web. Les nouveaux "
+"standard concernant HTML5, CSS3 et les nouvelles API Javascript permettent de développer "
+"des produits applicatifs tout aussi ergonomiques et dynamiques que les applications de "
+"bureau que vous connaissez."
+
+msgid "__INFO_DATA_WEBDEV_3__"
+msgstr ""
+"Les développements d'applications web sont souvent moins couteux en temps de développement "
+"et plus appréciés pour leur exécution simple à l'aide de navigateurs tels Mozilla Firefox, "
+"Google Chrome ou encore Internet Explorer."
+
+msgid "__INFO_DATA_APPDEV_1__"
+msgstr ""
+"J'ai fait mes débuts en développement logiciel à l'âge de 12 ans (en l'an 2000) par "
+"des petits logiciels utilitaires développés en C et C++ avec, respectivement l'API Win32 "
+"et Qt."
+
+msgid "__INFO_DATA_APPDEV_2__"
+msgstr ""
+"Dès lors que les applications demandées sont plus conséquentes en responsabilités et plus "
+"longues à développer, il est nécessaire de mettre en place un noyau d'application efficace "
+"et simple."
+
+msgid "__INFO_DATA_APPDEV_3__"
+msgstr ""
+"C'est pourquoi je me suis concentré pendant 2 ans sur un développement de librairie "
+"utilitaire qui me permettrait de développer rapidement tout projet logiciel. Ayant "
+"mis en place ce noyau, les développements de projets se résument à l'implémentation "
+"de différentes couches commerciales et interfaces utilisateurs. Le délai de développement "
+"d'une application se voit ainsi réduit d'un nombre important de jours de travail."
+
+msgid "__URL_REWRITE_BLOG_HOME__"
+msgstr "Accueil des articles"
+
+msgid "__URL_REWRITE_PERSONAL_INFO__"
+msgstr "Informations personnelles"
+
+msgid "__URL_REWRITE_BLOG_MEMBERS__"
+msgstr "Membres"
+
+msgid "__URL_REWRITE_BLOG_WRITE__"
+msgstr "Ajouter un article"
+
+msgid "__URL_REWRITE_BLOG_ADMIN__"
+msgstr "Gestion des articles"
+

@@ -9,8 +9,8 @@ class Catalogue_IndexController
 
 	public function indexAction()
 	{
-		$this->view->headTitle('Catalogue', 'PREPEND');
+		$this->view->headTitle('Portfolio', 'PREPEND');
 
-		$this->view->catalogueList = $this->_dataModel->getAll();
+		$this->view->projectsList = $this->_dataModel->getAll();
 	}
 }

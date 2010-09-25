@@ -9,5 +9,162 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-msgid "__TITLE_HOME_PAGE__"
+msgid "__HOME_PAGE_TITLE__"
 msgstr "C / C++ / PHP (4-5) / Javascript Developper"
+
+msgid "__HOME_PAGE_FIRST_P__"
+msgstr ""
+"Welcome to my personal web site. eViasWeb is an Open Source web platform which "
+"you can download the source code of at <a href=\"http://github.com/evias/eViasWeb\">its GIT repository</a>."
+
+msgid "__HOME_PAGE_SECOND_P__"
+msgstr ""
+"My personal informations, my resume and my references are public content and you can "
+"always access them. You can contact me for any development task using the 'Contact me' "
+"part of this website. Any development job requires a specific and clear case study, "
+"which means the reply delay may vary between 1 to 3 days, I ask you to accept this."
+
+msgid "__HOME_PAGE_THIRD_P__"
+msgstr ""
+"The modules shown on this platform can not be considered as finished work. They are "
+"mostly integrated to the platform for production test purposes. By now, only members "
+"can access those implemented modules. This should be changed as soon as the security "
+"level has been increased."
+
+msgid "__SIGNATURE__"
+msgstr ""
+"Sincerely, <br /><br />"
+"SAIVE Grégory"
+
+msgid "__MENU_LINK_HOME__"
+msgstr "Home"
+
+msgid "__MENU_LINK_INFO__"
+msgstr "Personal informations"
+
+msgid "__MENU_LINK_PRESENT__"
+msgstr "Articles"
+
+msgid "__MENU_LINK_CATALOGUE__"
+msgstr "Portfolio"
+
+msgid "__MENU_LINK_MEMBER__"
+msgstr "Member panel"
+
+msgid "__PLATFORM_HEADER_TEXT__"
+msgstr "eViasWeb - Open Source Development Platform"
+
+msgid "__PLATFORM_FOOTER_TEXT__"
+msgstr "eViasWeb - A development by <a href=\"mailto:saive.gregory@gmail.com\">Grégory Saive</a>"
+
+msgid "__INFO_PAGE_TITLE__"
+msgstr "Personal informations"
+
+msgid "__INFO_FIRST_TABLE_TITLE__"
+msgstr "Contact / Person"
+
+msgid "__INFO_NAME__"
+msgstr "Last name:"
+
+msgid "__INFO_FIRSTNAME__"
+msgstr "First name:"
+
+msgid "__INFO_TELEPHONE__"
+msgstr "Phone:"
+
+msgid "__INFO_MAIL__"
+msgstr "Mail:"
+
+msgid "__INFO_SECOND_TABLE_TITLE__"
+msgstr "Offered skills:"
+
+msgid "__INFO_LANGUAGES__"
+msgstr "Languages:"
+
+msgid "__INFO_SGBD__"
+msgstr "DBMS:"
+
+msgid "__INFO_LIBS_CPP__"
+msgstr "C++ libraries/API:"
+
+msgid "__INFO_LIBS_PHP__"
+msgstr "PHP libraries/API:"
+
+msgid "__INFO_LIBS_JS__"
+msgstr "Javascript libraries:"
+
+msgid "__INFO_COMPETENCES__"
+msgstr "Skills:"
+
+msgid "__INFO_DATA_COMPETENCES__"
+msgstr ""
+"Back-end development, Front-end Javascript development, "
+"application architecture, database modeling, "
+"Software server installations"
+
+msgid "__INFO_THIRD_TABLE_TITLE__"
+msgstr "Web development"
+
+msgid "__INFO_FOURTH_TABLE_TITLE__"
+msgstr "Desktop development"
+
+msgid "__INFO_DATA_WEBDEV_1__"
+msgstr ""
+"5 years ago I discovered the PHP language and its easy-to-use features. I am now able "
+"to confirm a very advanced skill using PHP. Although PHP will cover loads of features, "
+"it is not possible, using PHP, to develop a user friendly, dynamic interface. "
+"Which is why I have been using Javascript for about 3 years. The new HTML5 and CSS3 standards "
+"could change a lot in the manner of developing a web application, and so I have also been studying "
+"these new standards."
+
+msgid "__INFO_DATA_WEBDEV_2__"
+msgstr ""
+"The new web application development standards may revolution these given applications. "
+"Any web developer is now able to develop friendly interfaces and improve the user "
+"experience on their site, by following the correct HTML5 and CSS3 standards. "
+"Not only will it give us developers a better and easier way to publish our works, but it will "
+"also allow us to develop web applications, near to be as user friendly as Desktop applications ."
+
+msgid "__INFO_DATA_WEBDEV_3__"
+msgstr ""
+"Web developments are popular because of their small development delay and because of their "
+"everywhere-usability. You, indeed, only need a browser, as in Mozilla Firefox, Google Chrome "
+" or Internet Explorer to execute these applications."
+
+msgid "__INFO_DATA_APPDEV_1__"
+msgstr ""
+"I started developping desktop applications as I was 12 years old. I used to develop "
+"applications using C / Win32 and C++ / Qt. By now, I can interact on many more sectors "
+"of the desktop application development. As I have been working with multi-threading, database "
+"optimizations and project architecture, I am now able to develop any of your software needs."
+
+msgid "__INFO_DATA_APPDEV_2__"
+msgstr ""
+"Desktop applications require a longer development delay and they need a good kernel to be "
+"developped upon. In order to secure the application, there is a need of a library that will "
+"cover most of the daily desktop application development tasks."
+
+msgid "__INFO_DATA_APPDEV_3__"
+msgstr ""
+"Which is the reason why I have been developing my C++ library for about 2 years now. "
+"This library stands for an easier, faster, simpler and more effective way of deploying "
+"and developing applications. As far as it will summarize a desktop application's development "
+"to the development of business layers and user interfaces. This reduces the delay of "
+"development of some important days."
+
+msgid "__URL_REWRITE_BLOG_HOME__"
+msgstr "Accueil des articles"
+
+msgid "__URL_REWRITE_PERSONAL_INFO__"
+msgstr "Informations personnelles"
+
+msgid "__URL_REWRITE_BLOG_MEMBERS__"
+msgstr "Membres du blog"
+
+msgid "__URL_REWRITE_BLOG_WRITE__"
+msgstr "Ajouter un article"
+
+msgid "__URL_REWRITE_BLOG_ADMIN__"
+msgstr "Gestion des articles"
+
+

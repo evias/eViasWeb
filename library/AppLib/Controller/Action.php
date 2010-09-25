@@ -140,27 +140,23 @@ class AppLib_Controller_Action
         $pages = array(
             array(
 				'type'		=> 'mvc',
-				'label'		=> 'Accueil',
+				'label'		=> __('__MENU_LINK_HOME__'),
 				'route'		=> 'default'),
             array(
 				'type'		=> 'mvc',
-				'label'		=> 'Informations personnelles',
+				'label'		=> __('__MENU_LINK_INFO__'),
 				'route'		=> 'informations'),
             array(
 				'type'		=> 'mvc',
-				'label'		=> 'Présentation',
-				'route'		=> 'presentation'),
-            array(
-				'type'		=> 'mvc',
-				'label'		=> 'Blog',
+				'label'		=> __('__MENU_LINK_PRESENT__'),
 				'route'		=> 'blog'),
             array(
 				'type'		=> 'mvc',
-				'label'		=> 'Catalogue',
+				'label'		=> __('__MENU_LINK_CATALOGUE__'),
 				'route'		=> 'catalogue'),
  			array(
 				'type'		=> 'mvc',
-				'label'		=> 'Panel membre',
+				'label'		=> __('__MENU_LINK_MEMBER__'),
 				'route'		=> 'member'),
         );
 
