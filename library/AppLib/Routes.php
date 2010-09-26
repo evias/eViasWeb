@@ -78,6 +78,12 @@ class AppLib_Routes
   						'module'	=> 'blog',
 						'controller'=> 'index',
 						'action'	=> 'admin')),
+                'blog/article/show-full' => new Zend_Controller_Router_Route (
+                    'blog/article/show-full/:id',
+                    array (
+                        'module' => 'blog',
+                        'controller'=> 'index',
+                        'action' => 'show-full-article')),
                 'blog/article/like' => new Zend_Controller_Router_Route (
                     'blog/article/like/:id',
                     array (

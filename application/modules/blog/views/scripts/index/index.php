@@ -38,13 +38,14 @@ if (! empty($this->blogEntries)) {
         }
 
         $smallContenu = stripslashes($article->small_contenu);
+        $urlShowFull  = $this->url (array('id' => $article->article_id), 'blog/article/show-full');
 
 /* VIEW */
 echo <<<HTML
     <div class="article" id="$article->article_id">
         <div class="title"><p>
             <span>
-                $article->titre
+                <a href="$urlShowFull">$article->titre</a>
             </span>
         </p></div>
         <p id="$article->article_id-small" class="small-contenu"><span>$smallContenu...<span></p>
@@ -69,3 +70,26 @@ HTML;
 ?>
 
 
+<script type="javascript">
+    $$('.title').each (function (titleDivElm) {
+        titleDivElm.bindEventListener ('click', function (event) {
+            new Ajax.Request (
+                url : '/blog/article/show-full/' + titleDivElm.readAttribute ('rel'),
+                params : '',
+                {
+                    onSuccess : function (transport, JSON) {
+                        var lightbox = eVias.Lightbox.create ();
+
+                        lightbox.setTitle ('Blog article');
+
+                        lightbox.setContent (transport.responseText);
+
+                        lightbox.render();
+
+                        return false;
+                    }
+                }
+            );
+        }, false);
+    });
+</script>

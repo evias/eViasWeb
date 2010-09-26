@@ -82,6 +82,35 @@ class Blog_IndexController
         }
     }
 
+    public function showFullArticleAction ()
+    {
+        if (! $this->_hasParam('id')) {
+            exit(0);
+        }
+
+        $articleId = $this->_getParam('id');
+
+        $article = eVias_Blog_Article::loadById($articleId);
+        $articleText = $article->contenu;
+        $articleTitle= $article->titre;
+
+        if (! $this->_request->isXmlHttpRequest()) {
+            $this->view->articleText = $articleText;
+            $this->view->articleTitle = $articleTitle;
+            $this->render();
+            return;
+        }
+
+        $this->_helper->layout->setNoLayout(true);
+
+        echo '{
+            "title" : "' . $articleTitle . '",
+            "content" : "' . $articleText . '"
+        }';
+        echo $articleText;
+        exit(0);
+    }
+
 	public function postCommentAction()
 	{
 		if (! $this->_hasParam('id')) {
