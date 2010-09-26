@@ -300,51 +300,45 @@ div.clear {
     clear: both;
 }
 
-div.article {
-    margin-left: 20px;
+div.article-row {
+    padding: 0px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin: auto;
+    width:70%;
+    height: 200px;
+}
+
+div.article-row div.article {
+    margin-right: 10px;
     margin-bottom: 5px;
     border: 1px solid #dcdcdc;
+    float: left;
+    width: 215px;
+    height: 195px;
+    padding-left: 3px;
+    padding-right: 3px;
 }
 
-div.article p span {
+div.article-row div.article div.title {
+    border-bottom: 1px solid #dcdcdc;
+    width: 80%;
+    margin: auto;
+}
+
+div.article-row div.article p span {
     font-weight: bold;
 }
 
-div.article p.user-actions {
-    margin: 0px;
-    padding: 2px;
-}
-
-div.article p.user-actions p.comment-add input.comment-add {
-    width: 75px;
-    border: 1px dashed #000;
+div.article-row div.article p.small-contenu span {
     font-family: Verdana;
-    font-size: 10pt;
-    font-weight: bold;
-}
-
-div.article p.user-actions p.comment-add textarea.comment-add {
-    width: 100px;
-
-}
-
-div.article p.small-contenu {
+    font-size: 8pt;
     font-weight: normal;
-    text-decoration: underline;
-    font: 10pt Verdana;
 }
 
-div.article p.small-contenu:hover {
+div.article-row div.article p.small-contenu:hover {
     cursor: pointer;
     text-decoration: none;
-}
-
-div.article p img.hide-article {
-    border: 0px;
-}
-
-div.article p img.hide-article:hover {
-    cursor: pointer;
 }
 
 a:link,

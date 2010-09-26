@@ -26,6 +26,12 @@ class AppLib_Routes
                         'module'    => 'default',
                         'controller'=> 'index',
                         'action'    => 'informations')),
+                'presentation'      => new Zend_Controller_Router_Route_Static(
+                    self::cleanUrl('noname'),
+                    array (
+                        'module'    => 'default',
+                        'controller'=> 'index',
+                        'action'    => 'presentation')),
                 'language'      => new Zend_Controller_Router_Route(
                     'langue',
                     array (
@@ -72,7 +78,13 @@ class AppLib_Routes
   						'module'	=> 'blog',
 						'controller'=> 'index',
 						'action'	=> 'admin')),
-				'blog/comment/add'       => new Zend_Controller_Router_Route_Static(
+                'blog/article/like' => new Zend_Controller_Router_Route (
+                    'blog/article/like/:id',
+                    array (
+                        'module' => 'blog',
+                        'controller'=> 'index',
+                        'action' => 'like-article')),
+				'blog/comment/add'       => new Zend_Controller_Router_Route (
 					'blog/comment/add/:id',
 					array(
   						'module'	=> 'blog',

@@ -71,7 +71,7 @@ class Blog_IndexController
             $article = new eVias_Blog_Article();
             $article->titre = $titre;
             $article->contenu = $content;
-            $article->small_contenu = substr($content, 1, 75);
+            $article->small_contenu = substr($content, 1, 200);
             $article->category_id = $category_id;
             $article->status_type_id = $status_id;
             $article->date_updated = date('Y-M-d');
@@ -86,7 +86,7 @@ class Blog_IndexController
 	{
 		if (! $this->_hasParam('id')) {
 			echo 'HMMMM';
-			return ;
+			exit(0);
 		}
 
 		$articleId = $this->_getParam('id');
@@ -98,6 +98,13 @@ class Blog_IndexController
 		$this->_helper->viewRenderer->setNoRender(true);
 		exit(0);
 	}
+
+    public function likeArticleAction ()
+    {
+        if (! $this->_hasParam('id')) {
+            die('error..');
+        }
+    }
 
 	public function adminAction()
     {

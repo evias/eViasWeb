@@ -163,3 +163,6 @@ msgstr "Artikel hinzufügen"
 msgid "__URL_REWRITE_BLOG_ADMIN__"
 msgstr "Artikel Verwaltung"
 
+msgid "__ARTICLE_PAGE_TITLE__"
+msgstr "Artikel"
+
