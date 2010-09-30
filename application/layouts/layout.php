@@ -11,7 +11,6 @@
 		<?php echo $this->headMeta(); ?>
 		<?php echo $this->headTitle(); ?>
         <?php echo $this->headScript()->appendFile('/js/prototype.js'); ?>
-        <?php echo $this->headScript()->appendFile('/js/lib/eVias/BlogArticle.js'); /* @todo: include only in blog module */ ?>
 		<?php echo $this->headLink()->prependStylesheet($this->baseUrl() . '/styles/default.css'); ?>
 	</head>
 	<body>

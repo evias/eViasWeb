@@ -152,10 +152,6 @@ class AppLib_Controller_Action
 				'route'		=> 'blog'),
             array(
 				'type'		=> 'mvc',
-				'label'		=> __('__MENU_LINK_PRESENT__'),
-				'route'		=> 'presentation'),
-            array(
-				'type'		=> 'mvc',
 				'label'		=> __('__MENU_LINK_CATALOGUE__'),
 				'route'		=> 'catalogue'),
  			array(

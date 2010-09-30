@@ -8,88 +8,79 @@ if (! empty($this->eViasMessage)) {
 HTML;
 }
 
-echo <<<HTML
-    <p>
-        <span>Nombre d'articles: $this->countEntries</span><br />
-        <span>Nombre de publication: $this->countPublished</span><br />
-        <span>Nombre d'articles cachés: $this->countHidden</span>
-    </p>
-HTML;
 
 if (! empty($this->blogEntries)) {
-    $baseUrl = $this->baseUrl();
-    $i = 1;
+
+    // iterate blog entries to fill view data arrays
+    $historyLines   = array();
+    $activeBlogEntry= null;
     foreach ($this->blogEntries as $article) {
-        $datePublication = new Zend_Date($article->date_creation, 'fr_FR');
-        $datePublication = $datePublication->toString('dd MMMM yyyy');
-        $countComments = $article->countComments();
-        $commentText = $countComments > 1 ? 'Commentaires' : 'Commentaire';
-		$articleId = $article->article_id;
+        $showFullUrl = $this->url (array('id' => $article->article_id), 'blog/article/show-full');
 
-        if ($i > 1 && $i % 3 == 1) {
-            // end of articles row and begin of new one
-
-            echo '</div>'; // div class article-row
-            echo '<div class="clear"></div>';
-            echo '<div class="article-row">';
-        }
-        elseif ($i == 1) {
-            echo '<div class="article-row">';
-        }
-
-        $smallContenu = stripslashes($article->small_contenu);
-        $urlShowFull  = $this->url (array('id' => $article->article_id), 'blog/article/show-full');
-
-/* VIEW */
-echo <<<HTML
-    <div class="article" id="$article->article_id">
-        <div class="title"><p>
-            <span>
-                <a href="$urlShowFull">$article->titre</a>
-            </span>
-        </p></div>
-        <p id="$article->article_id-small" class="small-contenu"><span>$smallContenu...<span></p>
-        <pre id="$article->article_id-full" style="display:none">$article->contenu</pre>
-    </div>
-HTML;
-
-        $i++;
+        $historyLines[] = array(
+            'id'    => $article->article_id,
+            'title' => $article->titre,
+            'url'   => $showFullUrl
+        );
     }
+    ?>
+    <div id="blog-history">
+        <ul>
+        <?php
+        foreach ($historyLines as $idx => $line) {
+            echo '<li><a onclick="return false;" id="show-article-' . $line['id'] . '" rel="' . $line['id'] . '" href="' . $line['url'] . '" alt="' . $line['title'] . '">' . $line['title'] . '</a></li>';
+        }
+        ?>
+        </ul>
+    </div>
 
-    echo '</div>'; // end article-row
-    echo '<div class="clear"></div>';
+    <?php echo $this->render ('index/show-full-article.php'); ?>
+
+    <div class="clear"></div>
+
+<?php
 }
 else {
+    // no entries available
+
     echo <<<HTML
     <div class="empty">
         <p>Il n'y pas encore d'entrées dans le blog.</p>
     </div>
 HTML;
 }
-
 ?>
 
+<script type="text/javascript">
+    $$('#blog-history ul li').each (function (elm) {
+        var linkElm = elm.down ('a');
 
-<script type="javascript">
-    $$('.title').each (function (titleDivElm) {
-        titleDivElm.bindEventListener ('click', function (event) {
+        var articleId = linkElm.readAttribute('rel');
+
+        var showFullUrl = linkElm.readAttribute('href');
+
+        var linkId = 'show-article-' + articleId;
+
+        var linkDomElm = document.getElementById (linkId);
+
+        linkDomElm.addEventListener('click', function (event) {
             new Ajax.Request (
-                url : '/blog/article/show-full/' + titleDivElm.readAttribute ('rel'),
-                params : '',
+                showFullUrl,
                 {
-                    onSuccess : function (transport, JSON) {
-                        var lightbox = eVias.Lightbox.create ();
+                    asynchronous: false,
+                    parameters : '',
+                    onSuccess : function (transport) {
+                        var articleContent = transport.responseText;
+                        var articleTitle = document.getElementById (linkId).innerHTML;
 
-                        lightbox.setTitle ('Blog article');
-
-                        lightbox.setContent (transport.responseText);
-
-                        lightbox.render();
+                        $('article-title').update(articleTitle);
+                        $('article-content').update (articleContent);
 
                         return false;
                     }
                 }
             );
         }, false);
+
     });
 </script>

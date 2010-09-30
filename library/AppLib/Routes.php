@@ -54,7 +54,7 @@ class AppLib_Routes
 						'controller'=> 'index',
 						'action'	=> 'index')),
 // ------------- BLOG ROUTES
-				'blog'				=> new Zend_Controller_Router_Route_Static(
+				'blog'				=> new Zend_Controller_Router_Route (
 					self::cleanUrl(__('__URL_REWRITE_BLOG_HOME__')),
 					array(
 						'module'	=> 'blog',

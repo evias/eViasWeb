@@ -1,8 +1,8 @@
-<div class="article-content">
-    <div class="article-title">
-        <h2><?php echo stripslashes($this->articleTitle); ?></h2>
+<div id="article-container">
+    <div>
+        <h2 id="article-title"><?php echo stripslashes($this->articleTitle); ?></h2>
     </div>
-    <div class="content">
+    <div id="article-content">
         <?php echo str_replace(PHP_EOL, '<br />', stripslashes($this->articleText)); ?>
     </div>
 </div>

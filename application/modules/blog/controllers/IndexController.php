@@ -6,11 +6,7 @@ class Blog_IndexController
 
     public function init() {
         parent::init();
-        if (false === $this->_tryAuth()) {
-            $this->_forward('index');
-			// ajax queries may need more privilegies
-        }
-        else {
+        if (true === $this->_tryAuth()) {
             $session = $this->_getSession();
             $this->view->userName = 'Visiteur';
             if (false !== $session) {
@@ -30,25 +26,41 @@ class Blog_IndexController
             $this->view->eViasMessage = $flash[0];
         }
 
+        $activeId = 0;
+        if ($this->_hasParam('id')) {
+            $activeId = $this->_getParam('id');
+        }
+
+        $blogEntries = array();
+        $publishedEntries = array();
+        $activeEntry = null;
         try {
-            $blogEntries = eVias_Blog_Article::fetchAll('eVias_Blog_Article');
+            // get all blog entries
+            // get active entry
+
+            $blogEntries = eVias_Blog_Article::fetchAll('eVias_Blog_Article', 'date_creation', 'DESC');
             $publishedEntries = eVias_Blog_Article::loadAllPublished();
+
+            $activeEntry = $activeId == 0 ? $publishedEntries[0] : eVias_Blog_Article::loadById ($activeId);
         }
         catch (eVias_Exception $e) {
+
             $blogEntries = array();
             if (isset($publishedEntries) && false === $publishedEntries) {
                 $publishedEntries = array();
             }
+            $activeEntry = new eVias_Blog_Article;
         }
+
+        // simple render of action
 
         $countEntries = count($blogEntries);
         $countPublished = count($publishedEntries);
 
-        $this->view->countEntries   = $countEntries;
-        $this->view->countPublished = $countPublished;
-        $this->view->countHidden    = $countEntries - $countPublished;
-
         $this->view->blogEntries    = $publishedEntries;
+
+        $this->view->articleText    = $activeEntry->contenu;
+        $this->view->articleTitle   = $activeEntry->titre;
     }
 
 	public function writeAction()
@@ -91,7 +103,7 @@ class Blog_IndexController
         $articleId = $this->_getParam('id');
 
         $article = eVias_Blog_Article::loadById($articleId);
-        $articleText = $article->contenu;
+        $articleText = str_replace (PHP_EOL, '<br />', stripslashes($article->contenu));
         $articleTitle= $article->titre;
 
         if (! $this->_request->isXmlHttpRequest()) {
@@ -101,12 +113,8 @@ class Blog_IndexController
             return;
         }
 
-        $this->_helper->layout->setNoLayout(true);
+        $this->_helper->layout->disableLayout();
 
-        echo '{
-            "title" : "' . $articleTitle . '",
-            "content" : "' . $articleText . '"
-        }';
         echo $articleText;
         exit(0);
     }
