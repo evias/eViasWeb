@@ -3,6 +3,20 @@
 class Blog_IndexController
 	extends AppLib_Controller_Action_Blog
 {
+    private function _initNavigation ()
+    {
+        $blogEntries = array();
+        try {
+            // get all blog entries
+
+            $blogEntries = eVias_Blog_Article::loadAllPublished();
+        }
+        catch (eVias_Exception $e) {
+
+        }
+
+        $this->view->blogEntries    = $blogEntries;
+    }
 
     public function init() {
         parent::init();
@@ -14,7 +28,11 @@ class Blog_IndexController
             }
         }
 
-         $this->view->headTitle('Blog', 'PREPEND');
+        $this->view->headTitle('Blog', 'PREPEND');
+
+        $this->_initNavigation();
+
+        $this->_helper->layout()->setLayout('blog');
     }
 
 	public function indexAction()
@@ -31,21 +49,15 @@ class Blog_IndexController
             $activeId = $this->_getParam('id');
         }
 
-        $blogEntries = array();
         $publishedEntries = array();
         $activeEntry = null;
         try {
-            // get all blog entries
-            // get active entry
-
-            $blogEntries = eVias_Blog_Article::fetchAll('eVias_Blog_Article', 'date_creation', 'DESC');
             $publishedEntries = eVias_Blog_Article::loadAllPublished();
 
             $activeEntry = $activeId == 0 ? $publishedEntries[0] : eVias_Blog_Article::loadById ($activeId);
         }
         catch (eVias_Exception $e) {
 
-            $blogEntries = array();
             if (isset($publishedEntries) && false === $publishedEntries) {
                 $publishedEntries = array();
             }
@@ -57,13 +69,39 @@ class Blog_IndexController
         $countEntries = count($blogEntries);
         $countPublished = count($publishedEntries);
 
-        $this->view->blogEntries    = $publishedEntries;
-
-        $this->view->articleText    = $activeEntry->contenu;
+        $this->view->article = $activeEntry;
         $this->view->articleTitle   = $activeEntry->titre;
     }
 
-	public function writeAction()
+    public function showFullArticleAction ()
+    {
+        if (! $this->_hasParam('id')) {
+            exit(0);
+        }
+
+        $articleId = $this->_getParam('id');
+
+        $article = eVias_Blog_Article::loadById($articleId);
+        $articleText = str_replace (array('[code]','[/code]', PHP_EOL),
+                                    array('<div class="code">', '</div>', '<br />'),
+                                    stripslashes($article->contenu));
+        $articleTitle= $article->titre;
+
+        if (! $this->_request->isXmlHttpRequest()) {
+            $this->view->article = $article;
+            $this->view->articleText = $articleText;
+            $this->view->articleTitle = $articleTitle;
+            $this->render();
+            return;
+        }
+
+        $this->_helper->layout->disableLayout();
+
+        echo $article->getArticleHtml();
+        exit(0);
+    }
+
+    public function writeAction()
     {
 		$this->view->headTitle('Redaction', 'PREPEND');
 
@@ -94,30 +132,7 @@ class Blog_IndexController
         }
     }
 
-    public function showFullArticleAction ()
-    {
-        if (! $this->_hasParam('id')) {
-            exit(0);
-        }
 
-        $articleId = $this->_getParam('id');
-
-        $article = eVias_Blog_Article::loadById($articleId);
-        $articleText = str_replace (PHP_EOL, '<br />', stripslashes($article->contenu));
-        $articleTitle= $article->titre;
-
-        if (! $this->_request->isXmlHttpRequest()) {
-            $this->view->articleText = $articleText;
-            $this->view->articleTitle = $articleTitle;
-            $this->render();
-            return;
-        }
-
-        $this->_helper->layout->disableLayout();
-
-        echo $articleText;
-        exit(0);
-    }
 
 	public function postCommentAction()
 	{
