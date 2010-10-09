@@ -1,0 +1,105 @@
+div#blog-history {
+    margin: 5px;
+    width: 225px;
+    text-align: justify;
+    border: 0px;
+    border-right: 1px solid #000;
+    float: left;
+    height: 100%;
+}
+
+div#blog-history ul {
+    margin: 0px;
+    padding: 0px;
+}
+
+div#blog-history ul li {
+    list-style-type: none;
+}
+
+
+div#blog-history ul li a:link,
+div#blog-history ul li a:visited {
+    font-family: Verdana;
+    font-size: 9pt;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+div#blog-history ul li a:active,
+div#blog-history ul li a:hover {
+    font-family: Verdana;
+    font-size: 9pt;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+div#article-container {
+    width : 70%;
+    margin: auto;
+    float: left;
+}
+
+div#article-container div h2#article-title {
+    border: 0px dashed #363;
+    border-bottom: 1px dashed #363;
+}
+
+div#article-container div#article-content {
+    font-family: Verdana;
+    font-size: 9pt;
+    font-weight: normal;
+    color: #000;
+    text-align: justify;
+    margin: 10px;
+}
+
+div.code {
+    margin: 10px;
+    padding: 5px;
+    border: 1px solid #dcdcdc;
+}
+
+div.code span {
+    font-family: Courier New;
+    font-size: 9pt;
+    font-weight: normal;
+}
+
+div.code span.comment {
+    color: #006633;
+}
+
+div.code span.string {
+    color: #FF6633;
+    font-weight: normal;
+    font-style: italic;
+}
+
+div.code span.numeric {
+    color: #990033;
+}
+
+div.code span.uppercased {
+    color: #660000;
+}
+
+div.code span.keyword {
+    color: #3300cc;
+    font-weight: bold;
+}
+
+div.code span.library {
+    color: #0066CC;
+    font-weight: bold;
+}
+
+div.code span.prototype {
+    color: #990000;
+    font-weight: bold;
+    font-style: italic;
+}
+
+div.code span.variable {
+    color: #0066cc;
+}
