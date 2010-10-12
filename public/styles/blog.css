@@ -61,6 +61,8 @@ div.code {
     font-family: Courier New;
     font-size: 9pt;
     font-weight: normal;
+    overflow: auto;
+    width: 100%;
 }
 
 div.code span {
