@@ -39,6 +39,6 @@ class AppLib_Controller_Action_Catalogue
             );
         }
 
-        $this->view->subNavigation->subNavigation(array_merge($pages,$loggedPages));
+        $this->view->subPages = array_merge($pages,$loggedPages);
     }
 }

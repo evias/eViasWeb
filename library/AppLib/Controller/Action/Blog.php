@@ -12,9 +12,9 @@ class AppLib_Controller_Action_Blog
     protected function _initBlogNav() {
         $pages = array(
             array(
-                'type'  => 'mvc',
+                'type'  => 'uri',
                 'label' => 'Membres',
-                'route' => 'blog/members',
+                'uri'   => '/blog/members/index',
                 'class' => 'sub',
             ),
         );
@@ -23,18 +23,18 @@ class AppLib_Controller_Action_Blog
         if ($this->_tryAuth()) {
             $loggedPages = array(
 	            array(
-		        	'type'		=> 'mvc',
+		        	'type'		=> 'uri',
 	    			'label'		=> 'Ajout de billet',
-	    			'route'		=> 'blog/write',
+	    			'uri'		=> '/blog/index/write',
 	                'class'     => 'sub'),
             	array(
-		        	'type'		=> 'mvc',
+		        	'type'		=> 'uri',
 	    			'label'		=> 'Gestion des billets',
-	    			'route'		=> 'blog/admin',
+	    			'uri'		=> '/blog/index/admin',
 	                'class'     => 'sub'),
             );
         }
 
-        $this->view->subNavigation->subNavigation(array_merge($pages, $loggedPages)); // adds subpages
+        $this->view->subPages = array_merge($pages, $loggedPages);
     }
 }

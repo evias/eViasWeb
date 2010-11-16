@@ -27,9 +27,9 @@ class AppLib_Controller_Action_Member
         if ($this->_tryAuth()) {
             $pages = array(
                 array(
-                    'type'  => 'mvc',
+                    'type'  => 'uri',
                     'label' => 'Statistiques',
-                    'route' => 'member/stats',
+                    'route' => '/member/stats/index',
                 ),
             );
         }
@@ -38,16 +38,16 @@ class AppLib_Controller_Action_Member
         if ($this->_tryAuth()) {
             $loggedPages = array(
 				array(
-					'type' 		=> 'mvc',
+					'type' 		=> 'uri',
 					'label' 	=> 'Me déconnecter',
-					'route' 	=> 'member/logout'),
+					'uri' 	    => '/member/index/logout'),
             	array(
-	        		'type'		=> 'mvc',
+	        		'type'		=> 'uri',
 	    			'label'		=> 'Mon profil',
-	    			'route'		=> 'member/profile'),
+	    			'uri'		=> '/member/profile/index'),
             );
         }
 
-        $this->view->subNavigation->subNavigation(array_merge($pages, $loggedPages));
+        $this->view->subPages = array_merge($pages,$loggedPages);
     }
 }

@@ -23,6 +23,8 @@ class AppLib_Controller_Action
         $langSession = new Zend_Session_Namespace ("language");
         if (empty ($langSession->lang))
             $langSession->lang = 'fr';
+
+        $this->view->subPages = array();
 	}
 
     public function postDispatch() {
@@ -100,18 +102,9 @@ class AppLib_Controller_Action
         return $params;
     }
 
-    protected function _initToolBar() {
-        $elements = array(
-            'Mes accès' => $this->view->url(array(), 'toolbar/myaccess'),
-            'Ma page'   => $this->view->url(array(), 'toolbar/mypage'),
-        );
-
-        $this->view->toolBar->addElements($elements);
-    }
-
 	protected function _getLoginForm() {
 		$form = new eVias_LoginForm();
-		$form->setAction($this->view->url(array(), 'member/login'));
+		$form->setAction('/member/index/login');
 		return $form;
 	}
 
@@ -139,25 +132,25 @@ class AppLib_Controller_Action
     private function _initHomeNav() {
         $pages = array(
             array(
-				'type'		=> 'mvc',
+				'type'		=> 'uri',
 				'label'		=> __('__MENU_LINK_HOME__'),
-				'route'		=> 'default'),
+				'uri'		=> '/'),
             array(
-				'type'		=> 'mvc',
+				'type'		=> 'uri',
 				'label'		=> __('__MENU_LINK_INFO__'),
-				'route'		=> 'informations'),
+				'uri'		=> '/default/index/informations'),
             array(
-				'type'		=> 'mvc',
+				'type'		=> 'uri',
 				'label'		=> __('__MENU_LINK_PRESENT__'),
-				'route'		=> 'blog'),
+				'uri'		=> '/blog/index/index'),
             array(
-				'type'		=> 'mvc',
-				'label'		=> __('__MENU_LINK_CATALOGUE__'),
-				'route'		=> 'catalogue'),
+				'type'		=> 'uri',
+				'label'		=> __('__MENU_LINK_WIDGETGALLERY__'),
+				'uri'		=> '/widget-gallery/index/index'),
  			array(
-				'type'		=> 'mvc',
+				'type'		=> 'uri',
 				'label'		=> __('__MENU_LINK_MEMBER__'),
-				'route'		=> 'member'),
+				'uri'		=> '/member/index/index'),
         );
 
         foreach ($pages as $page) {
