@@ -1,0 +1,46 @@
+ul.posts {
+    margin: 0px;
+    padding: 0px;
+    margin-left: 7px;
+}
+
+ul.posts li.tweetblock {
+    list-style-type: none;
+    color: #069;
+    border: 0px;
+    border-bottom: 1px solid #dcdcdc;
+}
+
+span.tweet {
+    font: 8pt Verdana;
+    color: #069;
+    text-decoration: none;
+}
+
+ul.followers {
+    padding: 0px;
+    margin: 0px;
+    width: 100%;
+}
+
+ul.followers li {
+    list-style-type: none;
+    float: left;
+    margin: 0px;
+    margin-left: 2px;
+}
+
+ul.followers li a:link, ul.followers li a:visited {
+    text-decoration: none;
+}
+
+ul.followers li a:hover, ul.followers li a:active {
+    text-decoration: none;
+}
+
+ul.followers li a img {
+    border : 0px;
+    background: #fff;
+    width: 32px;
+    height: 32px;
+}
