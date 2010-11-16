@@ -73,10 +73,7 @@ class AppLib_Bootstrap
 		$viewRenderer->setView($view);
         $viewRenderer->setViewSuffix('php');
 
-        $twitterHelper = new AppLib_Controller_Action_Helper_Twitter();
-
 		Zend_Controller_Action_HelperBroker::addHelper($viewRenderer);
-        Zend_Controller_Action_HelperBroker::addHelper($twitterHelper);
 	}
 
 	/**
