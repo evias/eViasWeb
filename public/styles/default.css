@@ -7,20 +7,20 @@ body {
 }
 
 #page {
-	border: 2px solid #444444;
-	width: 1000px;
+	width: 100%;
 	padding: 0px;
 	margin: auto;
 }
 
 #page #header {
-	background-color: #363;
-	color: #fff;
-	height: 24px;
+	color: #000;
+}
+
+#page #header #eviaslogo {
+    float: left;
 }
 
 #page #header #lang-selector {
-    border : 1px;
     float: right;
 }
 
@@ -33,6 +33,73 @@ body {
     float: left;
     list-style-type: none;
 }
+
+/* --------------------------- MENU CONTENT
+ */
+#page div#header div#menu {
+    margin: auto;
+    margin-top: 3px;
+    margin-left: 15px;
+    padding: 0px;
+    float : left;
+}
+
+#page div#header div#subMenu {
+    margin: auto;
+    margin-top: 3px;
+    padding: 0px;
+    width: 900px;
+    float: left;
+}
+
+
+ul.navigation {
+    padding: 0px;
+    margin : auto;
+    border: 0px;
+}
+
+ul.navigation li {
+    list-style-type: none;
+    padding : 2px;
+    margin: 0px;
+    margin-left: 10px;
+    border: 0px;
+    float: left;
+}
+
+ul.navigation li a:visited, ul.navigation li a:link {
+    font-family: Verdana;
+    font-size: 11pt;
+    font-weight: normal;
+    text-decoration: underline;
+    color: #03C;
+}
+
+ul.navigation li a:hover, ul.navigation li a:active {
+    font-family: Verdana;
+    font-size: 11pt;
+    font-weight: normal;
+    text-decoration: none;
+    color: #03C;
+}
+
+ul.navigation li a.sub:visited, ul.navigation li a.sub:link {
+    font: Verdana;
+    font-size: 10pt;
+    font-weight: bold;
+    text-decoration:none;
+    color: #369;
+}
+
+ul.navigation li a.sub:active, ul.navigation li a.sub:hover {
+    font: Verdana;
+    font-size: 10pt;
+    font-weight: bold;
+    text-decoration:underline;
+    color: #369;
+}
+
 
 /* --------------------------- MY HISTORY
  */
@@ -112,84 +179,6 @@ div#toolbar fieldset select.toolbar-select option {
     color: #363;
 }
 
-/* --------------------------- MENU CONTENT
- */
-div#page div#menu {
-    margin: auto;
-    margin-top: 3px;
-    padding: 0px;
-    width: 980px;
-    height: 25px;
-    border: 2px solid #363;
-}
-
-div#page div#subMenu {
-    margin: auto;
-    margin-top: 3px;
-    padding: 0px;
-    width: 900px;
-    height: 25px;
-    border: 0px;
-    border-bottom: 1px solid #363;
-}
-
-
-ul.navigation {
-    padding: 0px;
-    margin : auto;
-    border: 0px;
-    width: 980px;
-    height: 35px;
-}
-
-ul.navigation li {
-    list-style-type: none;
-    padding : 2px;
-    color: #FF0000;
-    margin: 0px;
-    border: 0px;
-    border-right: 1px solid #363;
-    float: left;
-    background: #fff;
-}
-
-ul.navigation li:hover {
-    background: #91BE3F;
-}
-
-ul.navigation li a:visited, ul.navigation li a:link {
-    font-family: Verdana;
-    font-size: 11pt;
-    font-weight: normal;
-    text-decoration: underline;
-    color: #363;
-}
-
-ul.navigation li a:hover, ul.navigation li a:active {
-    font-family: Verdana;
-    font-size: 11pt;
-    font-weight: normal;
-    text-decoration: none;
-    color: #363;
-}
-
-ul.navigation li a.sub:visited, ul.navigation li a.sub:link {
-    font: Verdana;
-    font-size: 10pt;
-    font-weight: bold;
-    text-decoration:none;
-    color: #363;
-}
-
-ul.navigation li a.sub:active, ul.navigation li a.sub:hover {
-    font: Verdana;
-    font-size: 10pt;
-    font-weight: bold;
-    text-decoration:none;
-    color: #363;
-}
-
-
 /* ------------------------ PAGE CONTENT
  */
 
@@ -197,44 +186,47 @@ ul.navigation li a.sub:active, ul.navigation li a.sub:hover {
 {
 	color: #91BE3F;
 	border: 0px;
-	width: 100%;
-    margin: auto;
+	width: 70%;
+    float: left;
+    border : 0px;
+    border-right: 1px solid #306;
+    padding-right: 20px;
 }
 
 #page #content h1 {
-	color: #91BE3F;
+	color: #009;
     text-align: center;
 }
 
 #page #content h2 {
-    margin-left: 10%;
-    color: #363;
+    color: #306;
     font-family: Verdana;
     font-size: 12pt;
     font-weight: bold;
     background-color: #fff;
     text-align: center;
     width: 80%;
-    border: 1px dashed #ff6;
-}
-
-#page #content div#home {
-    text-align: center;
-    margin: 15px;
-    margin-left: 150px;
-    width: 500px;
+    text-decoration: underline;
 }
 
 #page #content p {
     color: #444;
 	font: 10pt Verdana;
     text-align: justify;
+    margin-left: 25px;
 }
 
 #page #content h3 {
     color: #000;
     font: 11pt Verdana;
     text-decoration: underline;
+}
+
+#page #content div.widget {
+    width: 30%;
+    border : 1px solid #dcdcdc;
+    margin: 0px;
+    margin-left: 10px;
 }
 
 #page #content p label {
@@ -271,23 +263,63 @@ ul.navigation li a.sub:active, ul.navigation li a.sub:hover {
     text-align: justify;
 }
 
+#page #rightPanel {
+    float: left;
+    margin-top : 15px;
+    margin-left: 7px;
+    padding: 5px;
+    width: 25%;
+}
+
+#page #rightPanel h3 {
+    color: #306;
+    font : 10pt Verdana;
+    text-decoration: underline;
+    margin-left: 15px;
+}
+
+#page #rightPanel ul {
+    margin: 0px;
+    padding: 0px;
+    margin-left: 7px;
+}
+
+#page #rightPanel ul li.article {
+    list-style-type: none;
+    height: 15px;
+    width: 100%;
+    color: #069;
+}
+
+#page #rightPanel ul li a:link, #page #rightPanel ul li a:visited {
+    font: 9pt Verdana;
+    color: #069;
+    text-decoration: none;
+}
+
+#page #rightPanel ul li a:active, #page #rightPanel ul li a:hover {
+    font: 9pt Verdana;
+    color: #069;
+    text-decoration: underline;
+}
+
 #page #footer {
-	background-color: #363;
-	color: #fff;
+	color: #306;
 	height: 24px;
 }
 
 #page #footer span {
 	text-align: center;
-	font: 10pt Verdana;
+	font: 8pt Verdana;
 }
 
 #page #footer span a:link, a:visited {
-	color: #fff;
+	color: #639;
 	text-decoration: underline;
 }
 
 #page #footer span a:hover, a:active {
+	color: #639;
 	text-decoration: none;
 }
 

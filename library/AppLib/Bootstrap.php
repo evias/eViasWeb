@@ -9,6 +9,9 @@ if (! function_exists ('__')) {
     }
 }
 
+defined('WWW_LIBRARY') ||
+    define ('WWW_LIBRARY', '/srv/srv_eviasdev/www/library');
+
 class AppLib_Bootstrap
 	extends Zend_Application_Bootstrap_Bootstrap
 {
@@ -35,7 +38,6 @@ class AppLib_Bootstrap
 	 *
 	 */
 	protected function _initDatabaseConnection() {
-        // @FIXME: do not initialize, not needed. Models do the work
 		$args = array(
 			'host'		=> 'localhost',
 			'username'	=> 'dev',
@@ -44,15 +46,23 @@ class AppLib_Bootstrap
 		);
 
 		eVias_ArrayObject_Db::setDefaultAdapter(new Zend_Db_Adapter_Pdo_Pgsql($args));
-	 }
+	}
+
+    public function _initTranslator() {
+		if (! isset($this->_translateAdapter)) {
+
+			$this->_translateAdapter = new Zend_Translate('tmx', APPLICATION_PATH . '/configs/translations.tmx', 'fr');
+		}
+    }
 
 	public function _initViewHelpers() {
 		$this->bootstrap('layout');
+		$this->bootstrap('view');
 		$layout = $this->getResource('layout');
 		$layout->setInflectorTarget(':script.:suffix');
 		$layout->setViewSuffix('php');
 
-		$view = new eVias_View();
+		$view = $this->getResource('view');
 
 		$view->doctype('XHTML1_STRICT');
 		$view->headMeta()->appendHttpEquiv('Content-type', 'text/html;charset=utf-8');
@@ -60,45 +70,13 @@ class AppLib_Bootstrap
 		$view->headTitle('eViasWeb Application');
 
 		$viewRenderer = new Zend_Controller_Action_Helper_ViewRenderer();
-		$viewRenderer->setView($view)
-					 ->setViewSuffix('php');
+		$viewRenderer->setView($view);
+        $viewRenderer->setViewSuffix('php');
 
-        $subNav = new AppLib_View_Helper_subNavigation;
-        $subNav->setView($view)
-               ->addCssAttr(array('class' => 'sub'));
-
-        $view->subNavigation = $subNav;
-
-        $toolBar = new AppLib_View_Helper_toolBar;
-        $toolBar->setView($view);
-
-        $view->toolBar = $toolBar;
-
-        $myHistory = new AppLib_View_Helper_myHistory;
-        $myHistory->setView($view);
-
-        $view->myHistory = $myHistory;
+        $twitterHelper = new AppLib_Controller_Action_Helper_Twitter();
 
 		Zend_Controller_Action_HelperBroker::addHelper($viewRenderer);
-	}
-
-
-	/**
-	 * _initRouter
-	 * initiliazes default routes to several modules,
-	 * controllers and actions.
-	 *
-	 * @todo : read from configuration
-	 *
-	 * @return void
-	 */
-	protected function _initRouter() {
-		$frontCtl 	= Zend_Controller_Front::getInstance();
-		$router 	= $frontCtl->getRouter();
-
-		foreach ($this->_getRoutes() as $routeTitle => $route) {
-			$router->addRoute($routeTitle, $route);
-		}
+        Zend_Controller_Action_HelperBroker::addHelper($twitterHelper);
 	}
 
 	/**
@@ -145,9 +123,5 @@ class AppLib_Bootstrap
         self::$_langAdapter->addTranslation (APPLICATION_PATH . '/locales/en/LC_MESSAGES/messages.mo', "en");
         self::$_langAdapter->addTranslation (APPLICATION_PATH . '/locales/de/LC_MESSAGES/messages.mo', "de");
     }
-
-	private function _getRoutes() {
-		return AppLib_Routes::fetch();
-	}
 
 }

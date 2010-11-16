@@ -75,11 +75,11 @@ class Blog_IndexController
 
     public function showFullArticleAction ()
     {
-        if (! $this->_hasParam('id')) {
+        if (! $this->_hasParam('article_id')) {
             exit(0);
         }
 
-        $articleId = $this->_getParam('id');
+        $articleId = $this->_getParam('article_id');
 
         $article = eVias_Blog_Article::loadById($articleId);
         $articleText = str_replace (array('[code]','[/code]', PHP_EOL),

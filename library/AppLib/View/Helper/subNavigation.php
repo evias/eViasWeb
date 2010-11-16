@@ -1,6 +1,6 @@
 <?php
 
-class AppLib_View_Helper_subNavigation
+class eViasWeb_View_Helper_subNavigation
     extends Zend_View_Helper_Abstract
 {
     protected $_view = null;

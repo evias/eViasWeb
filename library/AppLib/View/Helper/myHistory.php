@@ -1,13 +1,15 @@
 <?php
 
-class AppLib_View_Helper_myHistory
+class eViasWeb_View_Helper_MyHistory
     extends Zend_View_Helper_Abstract
 {
     protected $_view = null;
     protected $_histories = array();
 
-    public function display() {
+    public function myHistory($histories = array()) {
         $xHtml = '';
+
+        $this->_histories = $histories;
 
         if (! empty($this->_histories)) {
             $xHtml .= '<div id="myHistory">';
