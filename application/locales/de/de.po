@@ -48,8 +48,8 @@ msgstr "Persönliche Angaben"
 msgid "__MENU_LINK_PRESENT__"
 msgstr "Artikel"
 
-msgid "__MENU_LINK_CATALOGUE__"
-msgstr "Portfolio"
+msgid "__MENU_LINK_WIDGETGALLERY__"
+msgstr "Widgetsgallerie"
 
 msgid "__MENU_LINK_MEMBER__"
 msgstr "Mitglied Panel"
