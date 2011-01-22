@@ -40,7 +40,7 @@ class Member_IndexController
                 return $this->render('login');
             }
             // success authentication
-            $this->_redirect($this->view->url(array(), 'member'));
+            $this->_redirect('/member/index/index');
         }
     }
 
@@ -54,7 +54,7 @@ class Member_IndexController
             $this->_helper->FlashMessenger('You have been disconnected succesfully.');
         }
 
-        $this->_redirect($this->view->url(array(), 'member/login'));
+        $this->_redirect('/member/index/login');
     }
 }
 

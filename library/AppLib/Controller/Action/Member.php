@@ -29,7 +29,7 @@ class AppLib_Controller_Action_Member
                 array(
                     'type'  => 'uri',
                     'label' => 'Statistiques',
-                    'route' => '/member/stats/index',
+                    'uri' => '/member/stats/index',
                 ),
             );
         }
