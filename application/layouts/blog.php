@@ -1,6 +1,6 @@
 <?php
     $refUrl      = $_SERVER['REQUEST_URI'];
-    $scheme      = $_SERVER['HTTPS'] ? 'https' : 'http';
+    $scheme      = isset($_SERVER['HTTPS']) ? 'https' : 'http';
 
     $frenchLink  = $scheme . '://web.evias.be/?lang=fr&ref=' . $refUrl;
     $englishLink = $scheme . '://web.evias.be/?lang=en&ref=' . $refUrl;
