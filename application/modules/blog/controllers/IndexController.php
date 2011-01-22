@@ -12,7 +12,6 @@ class Blog_IndexController
             $blogEntries = eVias_Blog_Article::loadAllPublished();
         }
         catch (eVias_Exception $e) {
-
         }
 
         $this->view->blogEntries    = $blogEntries;
@@ -31,8 +30,6 @@ class Blog_IndexController
         $this->view->headTitle('Blog', 'PREPEND');
 
         $this->_initNavigation();
-
-        $this->_helper->layout()->setLayout('blog');
     }
 
 	public function indexAction()
@@ -70,8 +67,9 @@ class Blog_IndexController
 
         // simple render of action
 
-        $countEntries = count($blogEntries);
         $countPublished = count($publishedEntries);
+
+        $this->_helper->layout()->setLayout('blog');
 
         $this->view->article = $activeEntry;
         $this->view->articleTitle   = $activeEntry->titre;
@@ -132,7 +130,7 @@ class Blog_IndexController
             $article->save();
 
             $this->_helper->FlashMessenger('Your article has been succesfully saved');
-            $this->_redirect($this->view->url(array(), 'blog'));
+            $this->_redirect('/blog/index/index');
         }
     }
 
