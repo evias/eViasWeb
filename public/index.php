@@ -4,12 +4,11 @@
 defined('APPLICATION_PATH')
     || define('APPLICATION_PATH', realpath(dirname(__FILE__) . '/../application'));
 
-// @todo : set environment variable (SetEnv APPLICATION_ENV string)
-// Define application environment
-//defined('APPLICATION_ENV')
-//	|| define('APPLICATION_ENV', (getenv('APPLICATION_ENV') ? getenv('APPLICATION_ENV') : 'production'));
 defined('APPLICATION_ENV')
 	|| define('APPLICATION_ENV', (getenv('APPLICATION_ENV') ? getenv('APPLICATION_ENV') : 'development'));
+
+defined('WWW_LIBRARY') ||
+    define ('WWW_LIBRARY', '/home/httpd/phpinclude');
 
 // Ensure library/ is on include_path
 set_include_path(
@@ -30,3 +29,4 @@ $application = new Zend_Application(
 
 $application->bootstrap()
             ->run();
+
