@@ -306,6 +306,11 @@ div#toolbar fieldset select.toolbar-select option {
 #page #footer {
 	color: #306;
 	height: 24px;
+    margin: auto;
+    margin-top: 20px;
+    border-top: 1px dashed #069;
+    width: 80%;
+    text-align: center;
 }
 
 #page #footer span {

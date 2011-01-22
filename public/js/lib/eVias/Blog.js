@@ -128,7 +128,7 @@ eVias.Blog = {
                     height  : this._toolbarHeight + 'px',
                     border  : '1px solid #000'
                 });
-
+/*
                 Element.insert (this._domElm, {'before': this._toolbarElm});
 
                 document.addEventListener('DOMMouseScroll', function(evt) {
@@ -168,6 +168,8 @@ eVias.Blog = {
                     this.verticalMoveToolbar(this._divY);
 
                 }.bind(this), false);
+
+*/
             },
 
             verticalMoveToolbar : function (newY)

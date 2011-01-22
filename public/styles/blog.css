@@ -2,7 +2,6 @@ div#blog-history {
     margin: 5px;
     width: 225px;
     text-align: justify;
-    border: 0px;
     border-right: 1px solid #000;
     float: left;
     height: 100%;
@@ -37,6 +36,7 @@ div#blog-history ul li a:hover {
 div#article-container {
     width : 70%;
     margin: auto;
+    margin-left: 225px;
     float: left;
 }
 

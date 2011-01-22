@@ -34,8 +34,8 @@ echo <<<HTML_CODE
     <p>
         <label for="status">Statut de publication</label>
         <select name="status">
-            <option value="2">Mise en attente</option>
-            <option selected value="3">Publication</option>
+            <option value="1">Mise en attente</option>
+            <option selected value="2">Publication</option>
         </select>
     </p>
     <p>
