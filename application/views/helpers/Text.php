@@ -5,11 +5,11 @@ class eViasWeb_View_Helper_Text
 {
     public function text($str)
     {
-		$encoding = mb_detect_encoding($string, array('UTF-8', 'ISO-8859-15'));
+		$encoding = mb_detect_encoding($str, array('UTF-8', 'ISO-8859-15'));
 		if ($encoding != 'UTF-8') {
-			$string = mb_convert_encoding($string, 'UTF-8', $encoding);
+			$string = mb_convert_encoding($str, 'UTF-8', $encoding);
 		}
-		echo ($string);
+		echo ($str);
     }
 }
 

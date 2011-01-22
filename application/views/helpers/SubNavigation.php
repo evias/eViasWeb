@@ -16,11 +16,9 @@ class eViasWeb_View_Helper_SubNavigation
         if (is_null($this->_view))
             $setNoUrl = true;
 
-        if (! $displayMe) {
-            // may be called to just add some pages
-            $this->_pages = array_merge( $this->_pages, $subPages );
-            return '';
-        }
+        // may be called to just add some pages
+        $this->_pages = array_merge( $this->_pages, $subPages );
+        if (! $displayMe) return ;
 
         $xHtml = '';
         if (count($this->_pages) > 0)
