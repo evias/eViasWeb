@@ -54,6 +54,10 @@ class Blog_IndexController
         try {
             $publishedEntries = eVias_Blog_Article::loadAllPublished();
 
+            if (empty($publishedEntries)) {
+                throw new eVias_Exception ('no entries in evias_blog_article.');
+            }
+
             $activeEntry = $activeId == 0 ? $publishedEntries[0] : eVias_Blog_Article::loadById ($activeId);
         }
         catch (eVias_Exception $e) {
