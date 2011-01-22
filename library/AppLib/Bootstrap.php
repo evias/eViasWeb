@@ -9,9 +9,6 @@ if (! function_exists ('__')) {
     }
 }
 
-defined('WWW_LIBRARY') ||
-    define ('WWW_LIBRARY', '/srv/srv_eviasdev/www/library');
-
 class AppLib_Bootstrap
 	extends Zend_Application_Bootstrap_Bootstrap
 {
@@ -37,15 +34,11 @@ class AppLib_Bootstrap
 	 * Create connection
 	 *
 	 */
-	protected function _initDatabaseConnection() {
-		$args = array(
-			'host'		=> 'localhost',
-			'username'	=> 'dev',
-			'password'  => 'opendev',
-			'dbname'	=> 'evias'
-		);
+    protected function _initDatabaseConnection()
+    {
+        $configIni = new Zend_Config_Ini(APPLICATION_PATH . '/configs/application.ini', APPLICATION_ENV);
 
-		eVias_ArrayObject_Db::setDefaultAdapter(new Zend_Db_Adapter_Pdo_Pgsql($args));
+		eVias_ArrayObject_Db::setDefaultAdapter(new Zend_Db_Adapter_Pdo_Pgsql($configIni->psql));
 	}
 
     public function _initTranslator() {
